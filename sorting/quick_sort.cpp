@@ -3,28 +3,23 @@
 using namespace std;
 
 void quickSort(vector<int>&,int,int);
-
 int partition(vector<int>&, int,int);
 
 int main()
 {
-    vector<int> A = {6,10,13,5,8,3,2,25,4,11};
+    vector<int> A = {10,9,8,7,6,5,4,3,2,1};
     int start = 0;
-    int end = 10;
-
+    int end = (int)A.size();
     cout << "Before:" << endl;
     for(auto value : A)
         cout << value <<" ";
     cout << endl;    
-
     quickSort(A, start, end);
-
     cout << "After: " << endl;
     for(auto value : A)
         cout << value <<" ";
     cout << endl;   
 }
-
 
 void quickSort(vector<int>& A, int start,int end)
 {
@@ -43,17 +38,14 @@ int partition(vector<int>& A, int start,int end)
     int x = A[start];
     int i = start;
     int j;
-
     for(j = start+1; j < end; j++)
     {
-        if(A[j]<=x)
-        {
+        if(A[j]<=x) 
+	{
             i=i+1;
-			swap(A[i],A[j]);
+	    swap(A[i],A[j]);
         }
-
     }
-
     swap(A[i],A[start]);
     return i;
 }
