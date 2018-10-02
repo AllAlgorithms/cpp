@@ -20,6 +20,7 @@
 
 - [Arithmetic Analysis]()
 - [File Transfer Protocol]()
+- [Greedy Algorithms]()
 - [Graphs]()
 - [Math]()
 - [Neutral Network]()
