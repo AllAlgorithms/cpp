@@ -1,47 +1,58 @@
-// Binary Search implemented in C++
-// Carlos Abraham Hernandez
-// algorithms.abranhe.com/searches/binary-search
-// repl.it/@abranhe/Binary-Search
+#include<iostream.h>
+#include<conio.h>
 
-#include <iostream>
-using namespace std;
-
-int binary_search(int a[],int l,int r,int key)
+void bsearch(int ar[], int size, int item)
 {
-	while(l<=r)
-  {
-		int m = l + (r-l) / 2;
-
-		if(key == a[m])
-			return m;
-		else if(key < a[m])
-			r = m-1;
-		else
-			l = m+1;
-	}
-	return -1;
+int mid,beg,last,temp,pos;
+char flag='n';
+beg=0;
+last=(size-1);
+while(beg<=last)
+{
+mid=(beg+last)/2;
+if(ar[mid]==item)
+{
+flag='y';
+pos=mid+1;
+break;
+}
+else if(item>ar[mid])
+beg=mid+1;
+else
+last=mid-1;
+}
+if(flag=='y'){
+cout<<"\n\nElement found at "<<pos;
+cout<<" position!!";}
+else
+cout<<"\n\nElement not found!!";
 }
 
-int main(int argc, char const *argv[])
+void main()
 {
-	int n, key;
-	cout << "Enter size of array: ";
-	cin >> n;
-	cout << "Enter array elements: ";
-	int a[n];
-	
-  for (int i = 0; i < n; ++i)
-	{
-		cin>>a[i];	
-	}
-	cout << "Enter search key: ";
-	cin>>key;	
-	
-  int res = binary_search(a, 0, n-1, key);
-	
-  if(res != -1)
-		cout<< key << " found at index " << res << endl;
-	else
-		cout << key << " not found" << endl;
-	return 0;
+int ar[50];
+int item,size;
+clrscr();
+cout<<"\nBinary Search in 1-d integer array: ";
+cout<<"\n\nEnter size of array(max 50): ";
+cin>>size;
+if(size<50)
+{
+cout<<"\n\nEnter elements:\n";
+for(int i=0;i<size;i++)
+{
+cout<<"\t\t"<<i+1<<". ";
+cin>>ar[i];
 }
+cout<<"\n\nEnter element to be search: ";
+cin>>item;
+bsearch(ar,size,item);
+getch();
+}
+else
+{
+cout<<"\n\nWrong array size entered. Program terminating...";
+getch();
+}
+}
+
