@@ -31,7 +31,7 @@
 - [Hashes](hashes)
 - [Searches](searches)
 - [Sorting](sorting)
-- [Strings](strings)
+- [Strings](https://github.com/kavya98527/cpp/tree/master/Strings)
 - [Traversals](traversals)
 
 ## License
