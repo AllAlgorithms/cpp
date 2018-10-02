@@ -33,7 +33,7 @@
 - [Sorting](sorting)
 - [Strings](strings)
 - [Traversals](traversals)
-
+- [Heap Sort](sorting/heap_sort.cpp)
 ## License
 
 This work is licensed under a [MIT License](https://github.com/abranhe/algorithms/blob/master/LICENSE)
