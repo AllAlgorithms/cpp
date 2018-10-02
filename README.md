@@ -12,25 +12,27 @@
 	<a href="https://www.patreon.com/abranhe"><img src="https://cdn.abraham.gq/badges/patreon.svg" /></a>
 	<a href="https://paypal.me/abranhe/10"><img src="https://cdn.abraham.gq/badges/paypal.svg" /></a>
 	<br>
+	<br>
 	<a href="https://algorithms.abranhe.com"><code>algorithms.abranhe.com</code></a>
 </div>
 
 
 ## Contents
 
-- [Arithmetic Analysis]()
-- [File Transfer Protocol]()
-- [Graphs]()
-- [Math]()
-- [Neutral Network]()
-- [Ciphers]()
-- [Data Structures]()
-- [Dynamic Programming]()
-- [Hashes]()
-- [Searches]()
-- [Sorting]()
-- [Strings]()
-- [Traversals]()
+- [Arithmetic Analysis](arithmetic-analysis)
+- [File Transfer Protocol](file-transfer-protocol)
+- [Greedy Algorithms](greedy-algorithms)
+- [Graphs](graphs)
+- [Math](math)
+- [Neutral Network](neutral-network)
+- [Ciphers](ciphers)
+- [Data Structures](data-structures)
+- [Dynamic Programming](dynamic-programming)
+- [Hashes](hashes)
+- [Searches](searches)
+- [Sorting](sorting)
+- [Strings](strings)
+- [Traversals](traversals)
 
 ## License
 
