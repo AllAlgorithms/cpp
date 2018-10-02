@@ -1,6 +1,6 @@
 Following are the steps for an efficient solution:
 
-n! can be represented as :- n! = (a1^p1) (a2^p2)x...(ak^pk).
+n! can be represented as :-  n! = (a1^p1) (a2^p2)x...(ak^pk).
 
 where ak is the prime divisor lesser than n and pk is the highest power which can divide n!.
 
