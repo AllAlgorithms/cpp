@@ -4,44 +4,53 @@
 // repl.it/@abranhe/Binary-Search
 
 #include <iostream>
-using namespace std;
 
-int binary_search(int a[],int l,int r,int key)
+int binary_search(int arr[], int l, int r, int key)
 {
-	while(l<=r)
-  {
-		int m = l + (r-l) / 2;
-
-		if(key == a[m])
-			return m;
-		else if(key < a[m])
-			r = m-1;
-		else
-			l = m+1;
+	if(r < l)
+	{ // key is not found in arr
+		return -1;
 	}
-	return -1;
+
+	size_t middle = l + (r - l) / 2;
+	if(key == arr[middle])
+	{
+		return middle;
+	}
+	if(key > arr[middle])
+	{
+		return binary_search(arr, middle + 1, r, key);
+	}
+	// key must be found in left subarray or not found at all
+	return binary_search(arr, l, middle - 1, key);
 }
 
 int main(int argc, char const *argv[])
 {
 	int n, key;
-	cout << "Enter size of array: ";
-	cin >> n;
-	cout << "Enter array elements: ";
-	int a[n];
-	
-  for (int i = 0; i < n; ++i)
+	std::cout << "Enter size of array: ";
+	std::cin >> n;
+
+	std::cout << "Enter array elements, sorted: ";
+	int* arr = new int[n];
+  	for (size_t i = 0; i < n; ++i)
 	{
-		cin>>a[i];	
+		std::cin >> arr[i];	
 	}
-	cout << "Enter search key: ";
-	cin>>key;	
+
+	std::cout << "Enter search key: ";
+	std::cin >> key;	
 	
-  int res = binary_search(a, 0, n-1, key);
+  	int res = binary_search(arr, 0, n - 1, key);
 	
-  if(res != -1)
-		cout<< key << " found at index " << res << endl;
+  	if(res >= 0)
+	{
+		std::cout << "Key " << key << " found at index " << res << std::endl;
+	}
 	else
-		cout << key << " not found" << endl;
+	{
+		std::cout << "Could not find key " << key << "in array" << std::endl;
+	}
+	delete[] arr;
 	return 0;
 }
