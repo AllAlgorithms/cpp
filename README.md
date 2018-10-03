@@ -33,6 +33,7 @@
 - [Sorting](sorting)
 - [Strings](strings)
 - [Traversals](traversals)
+- [Backtracking](backtracking)
 
 ## License
 
