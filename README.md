@@ -34,6 +34,7 @@
 - [Strings](strings)
 - [Traversals](traversals)
 - [Recursion](Recursion)
+- [Heap](Heap)
 
 ## License
 
