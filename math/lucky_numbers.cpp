@@ -1,6 +1,7 @@
 /*
 * Lucky Numbers Implementation in C++
-* Author: Sathwik Matsa <github.com/sathwikmatsa>
+* Author: Sathwik Matsa 
+* Github: @sathwikmatsa
 */
 
 #include <iostream>
@@ -36,6 +37,7 @@ vector <int> lucky_numbers(int n){
 
 int main(){
 	int n;
+	cout << "Enter a number: ";
 	cin>>n;
 	vector <int> luckyNumbers = lucky_numbers(n);
 	cout << "lucky numbers up to " << n << ":" <<endl;
