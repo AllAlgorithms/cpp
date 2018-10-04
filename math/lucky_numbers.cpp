@@ -1,37 +1,47 @@
-// Lucky number implementation
-// Carlos Abraham Hernandez
-// algorithms.abranhe.com/math/lucky-numbers
+/*
+* Lucky Numbers Implementation in C++
+* Author: Sathwik Matsa <github.com/sathwikmatsa>
+*/
 
-#include <stdio.h> 
-#define bool int 
-  
-/* Returns 1 if n is a lucky no. ohterwise returns 0*/
-bool isLucky(int n) 
-{ 
-    static int counter = 2; 
-      
-    /*variable next_position is just for readability of 
-        the program we can remove it and use n only */
-    int next_position = n; 
-    if(counter > n) 
-        return 1; 
-    if(n%counter == 0) 
-        return 0;      
-      
-    /*calculate next position of input no*/
-    next_position -= next_position/counter; 
-      
-    counter++; 
-    return isLucky(next_position); 
-} 
-  
-/*Driver function to test above function*/
-int main() 
-{ 
-    int x = 7; 
-    if( isLucky(x) ) 
-        printf("%d is a lucky number.", x); 
-    else
-        printf("%d is not a lucky number.", x); 
-    getchar(); 
-} 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+// returns a vector of int containing lucky numbers in range [1,n]
+vector <int> lucky_numbers(int n){
+	
+	vector <int> seive;
+
+	// store numbers from 1 to n in the vector
+	for(int i = 1; i<=n; i++){
+		seive.push_back(i);
+	}
+
+	int survivor = 1;
+	int delete_every = 2;
+	int index;
+	while(seive.size() >= delete_every){
+		index = delete_every-1;
+		while(index < seive.size()){
+			seive.erase(seive.begin()+index);
+			index+=(delete_every-1);
+		}
+		delete_every = survivor = (*(++find(seive.begin(), seive.end(), survivor)));
+	}
+
+	return seive;
+}
+
+int main(){
+	int n;
+	cin>>n;
+	vector <int> luckyNumbers = lucky_numbers(n);
+	cout << "lucky numbers up to " << n << ":" <<endl;
+	for ( vector<int>::iterator it = luckyNumbers.begin() ; it < luckyNumbers.end(); it++ ){
+		cout << *it << " ";
+	}
+	cout<<endl;
+	return 0;
+}
