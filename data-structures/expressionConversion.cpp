@@ -1,6 +1,6 @@
 #include<stdbool.h>
-#include "stack.c"
-#include "functions.c"
+#include "stack.cpp"
+#include "functions.cpp"
 
 void infixToPostfix(char str[], char answer[], bool switchAssociativity)
 {
