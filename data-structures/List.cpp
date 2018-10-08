@@ -1,4 +1,9 @@
 
+/**
+ * Author: poifull10 <github.com/poifull10>
+*/
+
+#include <bits/stdc++.h>
 #include <iostream>
 #include <assert.h>
 
@@ -13,7 +18,6 @@ class List{
 public:
     List() : mHead(nullptr) {}
 
-    
     T operator[] (int x);
     void push_back (T val);
     void insert (int n, T val);
