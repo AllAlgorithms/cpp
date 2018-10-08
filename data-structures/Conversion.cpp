@@ -1,6 +1,6 @@
 #include<stdlib.h>
 #include<stdio.h>
-#include "expressionConversion.c"
+#include "expressionConversion.cpp"
 
 int main()
 {
