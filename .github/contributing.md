@@ -5,8 +5,8 @@
 ##  See
 
 - [General Rules](#general-rules)
-- [All ▲lgorithms Structure](#all-▲lgorithms-structure)
-- [Adding new algorithms](adding-new-algorithms)
+- [All ▲lgorithms Structure](#all-lgorithms-structure)
+- [Adding new algorithms](#adding-new-algorithms)
 - [Style](#style)
 - [Adding Documentation](#adding-documentation)
 - [Run it online](#run-it-online)
@@ -31,9 +31,8 @@
 │   │── binary_search.cpp
 │   └── linear_search.cpp
 └── math
-    ├── third-algorithm
-    ├── third_algorithm.js
-    └── fourth_algorithm.js
+    ├── third-algorithm.cpp
+    └── fourth_algorithm.cpp
 ```
 
 ### Adding new algorithms
