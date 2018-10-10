@@ -1,9 +1,16 @@
-// modular exponentiation implemented in C++
-//Author : Rituparno Biswas
-
-//Given three numbers x, y and p, compute (power(x,y)) % p. where power(a,b) calculates a to power of b 
-
-
+// Modular exponentiation implemented in C++
+// Given three numbers x, y and p, compute
+// (power(x,y)) % p. where power(a,b) calculates a
+// to power of b
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/math
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Rituparno Biswas
+// Github: @roopbiswas
+//
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -27,9 +34,9 @@ ll power(ll x, ll y, ll p)
 	}
 }
 
-int main() 
-{ 
-   ll x = 2,y = 5, p = 13; 
-   printf("Power is %lld", power(x, y, p)); 
-   return 0; 
-} 
+int main()
+{
+   ll x = 2,y = 5, p = 13;
+   printf("Power is %lld", power(x, y, p));
+   return 0;
+}

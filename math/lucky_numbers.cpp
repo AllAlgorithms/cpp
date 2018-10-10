@@ -1,9 +1,14 @@
-/*
-* Lucky Numbers Implementation in C++
-* Author: Sathwik Matsa 
-* Github: @sathwikmatsa
-*/
-
+//
+// Lucky Numbers Implementation in C++
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/math
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Sathwik Matsa
+// Github: @sathwikmatsa
+//
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -12,7 +17,7 @@ using namespace std;
 
 // returns a vector of int containing lucky numbers in range [1,n]
 vector <int> lucky_numbers(int n){
-	
+
 	vector <int> seive;
 
 	// store numbers from 1 to n in the vector

@@ -1,7 +1,14 @@
+//
 // C++ implementation of selection sort
 //
-// Author: Rituparno Biswas
-
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/sorting
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Rituparno Biswas
+// Github: @roopbiswas
+//
 #include <iostream>
 
 // Swap elements

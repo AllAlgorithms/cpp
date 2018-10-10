@@ -1,5 +1,14 @@
+//
 // HeapSorted Implementation (based on CLRS Introduction to Algoithms).
-
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/sorting
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Swapnil Rustagi
+// Github: @Swapnilr1
+//
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -13,11 +22,11 @@ int main()
     vector<int> A = {9,4,5,6,5,3,2,10,200,1}; // Random test data
     cout << "UNSORTED:" << endl;
     for(int i=0; i<A.size(); i++) cout << A[i] <<" ";
-    cout << endl;    
+    cout << endl;
     heapSort(A, 0, A.size());
     cout << "SORTED:" << endl;
     for(int i=0; i<A.size(); i++) cout << A[i] <<" ";
-    cout << endl;   
+    cout << endl;
 }
 
 void MaxHeapify(vector<int>& A, int low, int i, int HeapSize)
@@ -64,7 +73,3 @@ void heapSort(vector<int>& A, int low, int high)
 		MaxHeapify(A,low, 0, HeapSize);
 	}
 }
-
-
-
-

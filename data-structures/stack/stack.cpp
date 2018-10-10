@@ -1,3 +1,15 @@
+//
+//  A Stack is an abstract data type that serves as a collection
+// of elements, with two principal operations are push & pop
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/data-scructures/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: ANUJ MODI
+// Github: @descifrado
+//
 #include<stdio.h>
 #define max 50
 struct stack

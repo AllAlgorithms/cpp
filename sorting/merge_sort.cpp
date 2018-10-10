@@ -1,10 +1,14 @@
-//****************************************
+//
 // C++ implementation of merge sort
 //
-// Author: Carlos Abraham Hernandez
-// abraham@abranhe.com
-//****************************************
-
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/sorting
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Carlos Abraham Hernandez
+// Github: @abranhe (abraham@abranhe.com)
+//
 #include <iostream>
 
 // Merge the two half into a sorted data.
@@ -60,7 +64,7 @@ void merge(int arr[], int l, int m, int r)
         k++;
     }
     delete[] L;
-    delete[] R; 
+    delete[] R;
 }
 
 /* l is for left index and r is right index of the
@@ -82,15 +86,15 @@ void merge_sort(int arr[], int l, int r)
 }
 
 /* UTILITY FUNCTIONS */
-// A utility function to print an array of size n 
-void print_array(int arr[], int n) 
-{ 
+// A utility function to print an array of size n
+void print_array(int arr[], int n)
+{
    for (size_t i = 0; i < n; i++)
     {
        std::cout << arr[i] << " ";
     }
-    std::cout << std::endl; 
-} 
+    std::cout << std::endl;
+}
 
 /* Driver program to test above functions */
 int main()

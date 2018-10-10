@@ -1,3 +1,14 @@
+//
+// C++ implementation of quick sort
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/sorting
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Nikunj Taneja
+// Github: @underscoreorcus
+//
 #include <iostream>
 #include <vector>
 
@@ -9,7 +20,7 @@ void quick_sort(std::vector<int>& arr, size_t start, size_t end)
     if(start < end)
     {
         int pivot = partition(arr, start, end);
-        quick_sort(arr, start, pivot);  
+        quick_sort(arr, start, pivot);
         quick_sort(arr, pivot + 1, end);
     }
 }
@@ -21,7 +32,7 @@ int partition(std::vector<int>& arr, size_t start, size_t end)
     int i = start;
     for(size_t j = start + 1; j < end; j++)
     {
-        if(arr[j]<=x) 
+        if(arr[j]<=x)
 	    {
             i=i+1;
 	        std::swap(arr[i], arr[j]);
@@ -32,14 +43,14 @@ int partition(std::vector<int>& arr, size_t start, size_t end)
 }
 
 
-void print_vector(std::vector<int>& arr) 
-{ 
+void print_vector(std::vector<int>& arr)
+{
    for (size_t i = 0; i < arr.size(); i++)
     {
        std::cout << arr[i] << " ";
     }
-    std::cout << std::endl; 
-} 
+    std::cout << std::endl;
+}
 
 
 int main()
@@ -53,4 +64,3 @@ int main()
     std::cout << "Sorted array:" << std::endl;
     print_vector(arr);
 }
-
