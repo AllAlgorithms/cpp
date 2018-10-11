@@ -13,7 +13,7 @@
 	<a href="https://paypal.me/abranhe/10"><img src="https://cdn.abraham.gq/badges/paypal.svg" /></a>
 	<br>
 	<br>
-	<a href="https://algorithms.abranhe.com"><code>algorithms.abranhe.com</code></a>
+	<a href="https://allalgorithms.com"><code>allalgorithms.com</code></a>
 </div>
 
 
@@ -80,22 +80,26 @@
 - [Least common multiple of array](math/lcm_of_array.cpp)
 - [Lucky Numbers](math/lucky_numbers.cpp)
 - [Modular Exponentiations](math/modular_exponentiations.cpp)
+- [nth Fibonacci Number using Goldenratio](math/nth_fibonacci_using_goldenratio.cpp)
 
 ## Searches
 
 - [Binary Search](searches/binary_search.cpp)
 - [Jump Search](searches/jump_search.cpp)
 - [Linear Search](searches/linear_search.cpp)
+- [Ternary Search](searches/ternary_search.cpp)
 
 ## Sorting
 
 - [Bubble Sort](sorting/bubble_sort.cpp)
 - [Heap Sort](sorting/heap_sort.cpp)
+- [Heap Sort without vectors](sorting/heap_sort_without_vectors.cpp)
 - [Insertion Sort](sorting/insertion_sort.cpp)
 - [Merge Sort](sorting/merge_sort.cpp)
 - [Quick Sort](sorting/quick_sort.cpp)
 - [Selection Sort](sorting/selection_sort.cpp)
 - [Sort Vector](sorting/sort_vector.cpp)
+- [Tree Sort](sorting/tree_sort.cpp)
 
 ## Strings
 
