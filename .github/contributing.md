@@ -73,7 +73,7 @@ Each `.cpp` file should have the following header
 //
 // The All ▲lgorithms Project
 //
-// https://allalgorithms.com/cpp/category/algorithm
+// https://allalgorithms.com/
 // https://github.com/allalgorithms/cpp
 //
 // Contributed by: Carlos Abraham Hernandez
