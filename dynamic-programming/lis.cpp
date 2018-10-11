@@ -1,15 +1,12 @@
 #include <iostream>
 #include <algorithm>
+#include <vector>
 
 const int INF = 2e9 + 10;
 
-int arraySize(int arr[]){
-    return 6;
-}
-
-void printArray(int arr[]){
+void printArray(std :: vector <int> arr){
     std :: cout << '[';
-    const int n = arraySize(arr);
+    const int n = arr.size();
     for(int i = 0; i != n; ++ i){
         if(i) std :: cout << ", ";
         std :: cout << arr[i];
@@ -17,11 +14,11 @@ void printArray(int arr[]){
     std :: cout << ']';
 }
 
-int LIS(int arr[]){
-    const int n = arraySize(arr) + 1;
+int LIS(std :: vector <int> arr){
+    const int n = arr.size() + 1;
     int dp[n];
     dp[0] = -INF;
-    for(int i = 1; i != n; ++ i){
+    for(int i = 1; i < n; ++ i){
         dp[i] = INF;
     }
     int pos = 0;
@@ -37,7 +34,7 @@ int LIS(int arr[]){
 }
 
 int main(){
-    int array[6] = {3, 4, 5, 2, 6, 7};
+    std :: vector <int> array = {3, 4, 5, 2, 6, 7};
     std :: cout << "The Longest Increasing sequence of ";
     printArray(array);
     std :: cout << " is " << LIS(array);
