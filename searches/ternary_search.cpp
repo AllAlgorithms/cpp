@@ -1,6 +1,16 @@
 // Ternary Search implemented in C++
-//Sriram Desai
-
+//
+// Binary search works for a sorted array.
+// More documentation about the algorithm
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/cpp/category/algorithm
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Sriram Desai
+// Github: @desai10
+//
 #include <iostream>
 #include <vector>
 using namespace std;
