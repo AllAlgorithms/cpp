@@ -1,6 +1,18 @@
-
+//
 // CPP program to find n-th Fibonacci number 
-#include <bits/stdc++.h> 
+// More documentation about the algorithm
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Mohbius
+// Github: @mohbius
+//
+#include <iostream>
+#include <cstdlib> 
+#include <cmath>
 using namespace std; 
   
 // Approximate value of golden ratio 
@@ -31,9 +43,8 @@ int fib (int n)
   
 int main() 
 { 
-    int fibNo;
-    fibNo = fib(9); //RETURNS 34
-    fibNo = fib(8); //RETURNS 21
-    fibNo = fib(7); //RETURNS 13
+    std::cout << fib(9) << std::endl; // 34
+    std::cout << fib(8) << std::endl; // 21
+    std::cout << fib(7) << std::endl; // 13
     return 0; 
 } 
