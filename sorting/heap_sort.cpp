@@ -1,4 +1,14 @@
+//
 // C++ program for implementation of Heap Sort
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Kaushlendra Pratap
+// Github: @kaushl1998
+//
 #include <iostream>
 
 using namespace std;
