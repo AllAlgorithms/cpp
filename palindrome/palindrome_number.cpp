@@ -1,3 +1,14 @@
+//
+// Palindrome Checker implemented in C++
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: SHUBHAM SHARMA
+// Github: @VirtualRcoder
+
 #include <iostream>
 using namespace std;
 
