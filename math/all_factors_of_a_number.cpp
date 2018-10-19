@@ -1,3 +1,14 @@
+//
+// All Factors of a number
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: divyanshu132
+// Github: @divyanshu132
+//
 #include<iostream>
 #include<cmath>
 using namespace std;
