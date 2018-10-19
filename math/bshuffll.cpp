@@ -1,3 +1,14 @@
+//
+// Bshuffll Implementation
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: shashank3395
+// Github: @shashank3395
+//
 #include<iostream>
 #include<bits/stdc++.h>
 
