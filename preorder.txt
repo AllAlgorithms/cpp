@@ -1,0 +1,6 @@
+void preorder(struct node* root) {
+	if(root == NULL) return ;
+	cout<<root->data;
+	preorder(root->left);
+	preorder(root->right);
+}
