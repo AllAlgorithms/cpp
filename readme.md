@@ -3,7 +3,7 @@
 	<br>
     <br>
 	<br>
-	<img width="400" height="270" src="https://cdn.abranhe.com/projects/algorithms/logos/cpp.svg">
+	<img width="400" height="270" src="https://cdn.jsdelivr.net/npm/@programming-languages-logos/cpp@0.0.2/cpp.svg">
 	<br>
 	<br>
     <br>
