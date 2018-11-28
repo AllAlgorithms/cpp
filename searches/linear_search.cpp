@@ -1,6 +1,14 @@
-// Binary Search implemented in C++
-//Author : Bharat Reddy
-
+//
+// C++ program to implement Linear Search
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/searches/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Bharat Reddy
+// Github: @Bharat-Reddy
+//
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -32,7 +40,7 @@ int main()
 		cout<<key <<" not found"<<endl;
 	}
 	else
-	{	
+	{
 		cout<<key<<" found at index"<<res<<endl;
 	}
 	return 0;

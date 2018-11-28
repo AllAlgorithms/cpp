@@ -1,7 +1,14 @@
-/* Factorial
-
-Author: Pablo Trinidad <github.com/pablotrinidad>
-*/
+//
+// C++ program to demonstrate Factorial Algorithm
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/math
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Pablo Trinidad
+// Github: @pablotrinidad
+//
 
 #include <bits/stdc++.h>
 using namespace std;

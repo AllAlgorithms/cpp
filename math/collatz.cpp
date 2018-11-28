@@ -1,7 +1,14 @@
-/* Collatz sequenge
-Author: Pablo Trinidad <github.com/pablotrinidad>
-*/
-
+//
+// Collatz sequenge algorithm implementation in C++
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/cpp/math/collatz-sequenge
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Pablo Trinidad
+// Github: @pablotrinidad
+//
 #include <bits/stdc++.h>
 using namespace std;
 

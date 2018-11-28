@@ -1,7 +1,14 @@
+//
 // C++ implementation of bubble sort
 //
-// Author: Carlos Abraham Hernandez
-
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/sorting
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Carlos Abraham Hernandez
+// Github: @abranhe
+//
 #include <iostream>
 
 // Swap elements
@@ -28,15 +35,15 @@ void bubble_sort(int arr[], size_t n)
    }
 }
 
-// A utility function to print an array of size n 
-void print_array(int arr[], int n) 
-{ 
+// A utility function to print an array of size n
+void print_array(int arr[], int n)
+{
    for (size_t i = 0; i < n; i++)
     {
        std::cout << arr[i] << " ";
     }
-    std::cout << std::endl; 
-} 
+    std::cout << std::endl;
+}
 
 int main()
 {
