@@ -26,6 +26,6 @@ int main()
     cout<<"Enter 2 numbers : ";
     cin>>a>>b;
     int g_c_d = gcd(a,b);
-    cout<<"GCD is <<g_c_d<<endl;
+    cout<<"GCD is "<<g_c_d<<endl;
     return 0;
 }
