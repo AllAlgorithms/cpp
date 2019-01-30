@@ -1,13 +1,9 @@
     /*
-
      * C++ Program to Implement Z-Algorithm
-
      */
 
     #include <iostream>
-
     #include <cstring>
-
     #include <vector>
 
     using namespace std;
