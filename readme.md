@@ -59,6 +59,8 @@
 	- [Queue](data-structures/queue/queue.cpp)
 - Stack
 	- [Stack](data-structures/stack/stack.cpp)
+- Linked List
+	- [linked list](data-structures/linkedlist)
 
 ## Dynamic Programming
 
@@ -68,6 +70,8 @@
 - [Longest common subsequence](dynamic-programming/lcs.cpp)
 - [Longest Path](dynamic-programming/longest_path.cpp)
 - [Ways to Cover](dynamic-programming/ways_to_cover.cpp)
+- [Fibonacci Numbers](dynamic-programming/fibonacci_number.cpp)
+- [Rod Cutting](dynamic-programming/rod_cutting.cpp)
 
 ## Graphs
 
@@ -78,6 +82,7 @@
 - [Dijkstra](graphs/dijkstra.cpp)
 - [Floyed Warshall](graphs/floyd_warshall.cpp)
 - [Prims Adjacency List](graphs/prims_adjacency_list.cpp)
+- [Topo-Sort](graphs/toposort.cpp)
 
 ## Math
 
@@ -89,6 +94,13 @@
 - [Lucky Numbers](math/lucky_numbers.cpp)
 - [Modular Exponentiations](math/modular_exponentiations.cpp)
 - [nth Fibonacci Number using Goldenratio](math/nth_fibonacci_using_goldenratio.cpp)
+- [Armstrong Numbers](math/armstrong_number.cpp)
+- [Termo Conversion](math/TermoConv.cpp)
+- [Pascal Triangle](math/Pascals_triangle.cpp)
+- [Modular Exponentiation](math/modular_exponentiation.cpp)
+- [Maximum Subarray Problem ](math/kadence.cpp)
+- [Eulers Totient (Phi-function)](math/eulers_totient.cpp)
+- [Slicker Algorithm](math/Slicker_Algorithm.cpp)
 
 ## Searches
 
@@ -96,6 +108,7 @@
 - [Jump Search](searches/jump_search.cpp)
 - [Linear Search](searches/linear_search.cpp)
 - [Ternary Search](searches/ternary_search.cpp)
+- [Exponential Search](searches/exponential_search.cpp)
 
 ## Sorting
 
@@ -108,6 +121,13 @@
 - [Selection Sort](sorting/selection_sort.cpp)
 - [Sort Vector](sorting/sort_vector.cpp)
 - [Tree Sort](sorting/tree_sort.cpp)
+- [Counting Sort](sorting/counting_sort.cpp)
+- [Bogo-Sort](sorting/bogo_sort.cpp)
+- [Radix-Sort](sorting/radix_sort.cpp)
+- [Rank Sort](sorting/rank_sort.cpp)
+- [Shell Sort](sorting/shell_sort.cpp)
+- [Stooge Sort](sorting/stooge_sort.cpp)
+- [Shaker Sort](sorting/shaker_sort.cpp)
 
 ## Strings
 
@@ -121,6 +141,7 @@
 - [Remove Adjacent Duplicates](strings/remove_adjacent_duplicates.cpp)
 - [Remove Duplicates](strings/remove_duplicates.cpp)
 - [Reverse String](strings/reverse_string.cpp)
+- [Naive Search](strings/naive_search.cpp)
 
 ## License
 
