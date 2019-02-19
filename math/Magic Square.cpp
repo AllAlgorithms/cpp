@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 
 #define N 3
 using namespace std;
@@ -41,9 +41,13 @@ bool isMagicSquare(int mat[][N])
 
 int main()
 {
-    int mat[][N] = {{ 2, 7, 6 },
-                    { 9, 5, 1 },
-                    { 4, 3, 8 }};
+    int mat[3][N] ,i,j;
+    
+    for(i=0; i<3; i++)
+    {
+        for(j=0; j<3; j++)
+        cin>>mat[i][j];
+    }
 
     if (isMagicSquare(mat))
         cout << "Magic Square";
