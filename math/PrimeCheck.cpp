@@ -4,20 +4,19 @@ using namespace std;
 
 int main()
 {
-    int x,y,z,a=0;
+    int x,y,z=0;
     // This program will check if a number is a prime number
     cout << "Number= ";
     cin >> x;
 
     for(y=2;y<=sqrt(x);y++)
     {
-        z=x%y;
-        if(z==0)
+        if(x%y==0)
         {
-            a=a+1;
+            z=++z;
         }
     }
-    if(a==0)
+    if(z==0)
     {
         cout << "A prime number" << endl;
     }
