@@ -25,6 +25,5 @@ int main()
         cout << "Not a prime number" << endl;
     }
 
-    system("pause");
     return 0;
 }
