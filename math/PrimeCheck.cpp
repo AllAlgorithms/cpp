@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 int main()
@@ -8,7 +9,7 @@ int main()
     cout << "Number= ";
     cin >> x;
 
-    for(y=2;y<=(x/2);y++)
+    for(y=2;y<=sqrt(x);y++)
     {
         z=x%y;
         if(z==0)
