@@ -1,0 +1,7 @@
+language: node_js
+
+script: cd scripts \
+        && npm run validate
+        
+notifications:
+  email: false

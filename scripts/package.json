@@ -1,0 +1,15 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "Maintaining clean the All ▲lgorithms Project",
+  "main": "formatter.js",
+  "scripts": {
+    "validate": "node validate.js",
+    "format": "node formatter.js"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "glob": "^7.1.3"
+  }
+}
