@@ -10,6 +10,7 @@ const glob = require('glob');
 const path = require('path');
 const decamelize = require('decamelize');
 const shell = require('child_process').execSync;
+const chalk = require('chalk');
 
 const getFiles = (src, callback) => {
   glob(src + '/**', callback);
@@ -29,6 +30,10 @@ getFiles('../', (err, res) => {
       // https://stackoverflow.com/a/41030518/7602110
       // Can be replaced in the future
       shell(`mv ${file} ${decamelize(file)}`);
+
+      if (file !== decamelize(file)) {
+        console.log(`The file ${chalk.red(file)} was successfuly changed to ${chalk.green(decamelize(file))}`);
+      }
 
       // Replace for convention .h for .hpp
       if (path.extname(file) === '.h') {

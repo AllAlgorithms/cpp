@@ -1,5 +1,7 @@
 /**
- * The All Algorithms C++ Validate.js
+ * validate.js
+ * 
+ * The All ▲lgorithms validator CLI
  * 
  * Author: Carlos Abraham Hernandez
  * https://abranhe.com (abraham@abranhe.com)
@@ -9,6 +11,7 @@
 const glob = require('glob');
 const path = require('path');
 const decamelize = require('decamelize');
+const chalk = require('chalk');
 const shell = require('child_process').execSync;
 
 const getFiles = (src, callback) => {
@@ -25,10 +28,12 @@ getFiles('../', (err, res) => {
         return;
       }
 
-      if(file !== decamelize(file)){
-        console.log('Don\'t follow the All ▲lgorithms structure. :/');
-        process.exit();
-      }      
+      if (file !== decamelize(file)) {
+        console.log(`The file ${chalk.red(path.basename(file))} does not follow the correct style.`);
+        // Stop when a file with wrong format is found
+        throw new TypeError(`File project style does not follow the All ▲lgorithms structure.`);
+      }
+      console.log(`The file ${chalk.green(path.basename(file))} is ok.`);
     });
   }
 });
