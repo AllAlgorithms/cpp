@@ -1,7 +1,10 @@
-language: node
+language: node_js
+node_js:
+  - "9"
 
-script: cd scripts \
-        && npm run validate
+before_script: npm version && install
+
+script: cd scripts && npm run validate
         
 notifications:
   email: false
