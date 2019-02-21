@@ -33,6 +33,10 @@ getFiles('../', (err, res) => {
 
       if (file !== decamelize(file)) {
         console.log(`The file ${chalk.red(file)} was successfuly changed to ${chalk.green(decamelize(file))}`);
+
+        // Change file on git history
+        // https://stackoverflow.com/a/16071375/7602110
+        shell(`git mv --force ${file} ${decamelize(file)}`);
       }
 
       // Replace for convention .h for .hpp
