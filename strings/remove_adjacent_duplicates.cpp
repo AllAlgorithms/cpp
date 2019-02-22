@@ -1,5 +1,5 @@
 //
-// C/C++ program to remove all adjacent duplicates from a string 
+// C/C++ program to remove all adjacent duplicates from a string
 //
 // The All ▲lgorithms Project
 //
@@ -15,7 +15,7 @@ using namespace std;
 
 // Recursively removes adjacent duplicates from str and returns
 // new string. las_removed is a pointer to last_removed character
-char* removeUtil(char *str, char *last_removed)
+char *removeUtil(char *str, char *last_removed)
 {
     // If length of string is 1 or 0
     if (str[0] == '\0' || str[1] == '\0')
@@ -35,21 +35,21 @@ char* removeUtil(char *str, char *last_removed)
     // At this point, the first character is definiotely different
     // from its adjacent. Ignore first character and recursively
     // remove characters from remaining string
-    char* rem_str = removeUtil(str+1, last_removed);
+    char *rem_str = removeUtil(str + 1, last_removed);
 
     // Check if the first character of the rem_string matches with
     // the first character of the original string
     if (rem_str[0] && rem_str[0] == str[0])
     {
         *last_removed = str[0];
-        return (rem_str+1); // Remove first character
+        return (rem_str + 1); // Remove first character
     }
 
     // If remaining string becomes empty and last removed character
     // is same as first character of original string. This is needed
     // for a string like "acbbcddc"
     if (rem_str[0] == '\0' && *last_removed == str[0])
-         return rem_str;
+        return rem_str;
 
     // If the two first characters of str and rem_str don't match,
     // append first character of str before the first character of

@@ -1,5 +1,5 @@
 //
-// CPP program to remove duplicate character 
+// CPP program to remove duplicate character
 // from character array and print in sorted
 // order
 //
@@ -11,7 +11,7 @@
 // Contributed by: Tushar Kanakagiri
 // Github: @tusharkanakagiri
 //
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 char *removeDuplicate(char str[], int n)
@@ -20,18 +20,19 @@ char *removeDuplicate(char str[], int n)
    int index = 0;
 
    // Traverse through all characters
-   for (int i=0; i<n; i++) {
+   for (int i = 0; i < n; i++)
+   {
 
-     // Check if str[i] is present before it
-     int j;
-     for (j=0; j<i; j++)
-        if (str[i] == str[j])
-           break;
+      // Check if str[i] is present before it
+      int j;
+      for (j = 0; j < i; j++)
+         if (str[i] == str[j])
+            break;
 
-     // If not present, then add it to
-     // result.
-     if (j == i)
-        str[index++] = str[i];
+      // If not present, then add it to
+      // result.
+      if (j == i)
+         str[index++] = str[i];
    }
 
    return str;
@@ -40,7 +41,7 @@ char *removeDuplicate(char str[], int n)
 // Driver code
 int main()
 {
-   char str[]= ""; //Enter string here
+   char str[] = ""; //Enter string here
    int n = sizeof(str) / sizeof(str[0]);
    cout << removeDuplicate(str, n);
    return 0;

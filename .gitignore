@@ -4,3 +4,4 @@ DS_Store
 /scripts/node_modules
 /scripts/yarn.lock
 /scripts/package-lock.json
+.vscode/
