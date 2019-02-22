@@ -1,6 +1,7 @@
 
 #include <bits/stdc++.h>
-
+#include <algorithm>
+#include <iostream>
 using namespace std;
 
 const int N = 1010;
@@ -9,8 +10,10 @@ const int MOD = 1e9 + 7;
 // Returns the greatest common divisors (GCD) of the given two numbers.
 // Worst case when (a, b) are two consecutive Fibonacci numbers.
 // O(log(n))
-int gcd(int a, int b) {
-    while (b) {
+int gcd(int a, int b)
+{
+    while (b)
+    {
         int tmp = a % b;
         a = b;
         b = tmp;
@@ -21,13 +24,15 @@ int gcd(int a, int b) {
 // Returns the greatest common divisors (GCD) of the given two numbers recursively.
 // Worst case when (a, b) are two consecutive Fibonacci numbers.
 // O(log(n))
-int gcd_rec(int a, int b) {
+int gcd_rec(int a, int b)
+{
     return b == 0 ? a : gcd_rec(b, a % b);
 }
 
 // Returns the least common multiple (LCM) of the given two numbers.
 // O(GCD(a, b)) = O(log(n))
-int lcm(int a, int b) {
+int lcm(int a, int b)
+{
     return a / gcd(a, b) * b;
 }
 
@@ -35,9 +40,11 @@ int lcm(int a, int b) {
 // using the extended Euclidean algorithm.
 // (i.e. GCD(a, b) = s.a + t.b).
 // O(GCD(a, b)) = O(log(n))
-pair<int, int> extendedEuclid(int a, int b) {
-    if (b == 0) {
-        return { 1, 0 };
+pair<int, int> extendedEuclid(int a, int b)
+{
+    if (b == 0)
+    {
+        return {1, 0};
     }
 
     pair<int, int> p = extendedEuclid(b, a % b);
@@ -45,18 +52,21 @@ pair<int, int> extendedEuclid(int a, int b) {
     int s = p.first;
     int t = p.second;
 
-    return { t, s - t * (a / b) };
+    return {t, s - t * (a / b)};
 }
 
 // Returns ((base^exp) mod m) using iterative fast power algorithm
 // Note that if (base=0, exp=0) is passed to the function it will return 1.
 // O(log(exp))
-int power(int base, int exp, int mod) {
+int power(int base, int exp, int mod)
+{
     int ans = 1;
     base %= mod;
 
-    while (exp > 0) {
-        if (exp & 1) ans = (ans * base) % mod;
+    while (exp > 0)
+    {
+        if (exp & 1)
+            ans = (ans * base) % mod;
         exp >>= 1;
         base = (base * base) % mod;
     }
@@ -67,8 +77,10 @@ int power(int base, int exp, int mod) {
 // Returns ((base^exp) mod m) using recursive fast power algorithm.
 // Note that if (base=0, exp=0) is passed to the function it will return 1.
 // O(log(exp))
-int power_rec(int base, int exp, int mod) {
-    if (exp == 0) {
+int power_rec(int base, int exp, int mod)
+{
+    if (exp == 0)
+    {
         return 1;
     }
 
@@ -81,7 +93,8 @@ int power_rec(int base, int exp, int mod) {
 // (i.e. (a * mod_inverse(a)) == 1 (mod m)).
 // Note that the function works correctly only if m is a prime number.
 // O(log(m))
-int modInverse(int a, int m) {
+int modInverse(int a, int m)
+{
     return power(a, m - 2, m);
 }
 
@@ -90,7 +103,8 @@ int modInverse(int a, int m) {
 // Note that C(n, r) = C(n, n - r)
 // So call the function with nCr(n, min(r, n-r)) for better performance.
 // O(r)
-int nCr(int n, int r) {
+int nCr(int n, int r)
+{
     if (n < r)
         return 0;
 
@@ -104,7 +118,8 @@ int nCr(int n, int r) {
 // After calling this function, comb[n][r] will be equals to nCr.
 // O(n^2)
 int comb[N][N];
-void buildPT(int n) {
+void buildPT(int n)
+{
     for (int i = comb[0][0] = 1; i <= n; ++i)
         for (int j = comb[i][0] = 1; j <= i; ++j)
             comb[i][j] = (comb[i - 1][j] + comb[i - 1][j - 1]) % MOD;
@@ -112,7 +127,8 @@ void buildPT(int n) {
 
 // Returns whether the given number is prime or not.
 // O(sqrt(n))
-bool isPrime(int n) {
+bool isPrime(int n)
+{
     if (n < 2)
         return 0;
     if (n % 2 == 0)
@@ -128,14 +144,18 @@ bool isPrime(int n) {
 // After calling this function, prime[i] will be equal 1 if i is prime, 0 otherwise.
 // O(n.log(log(n)))
 bool prime[N];
-void generatePrimes(int n) {
+void generatePrimes(int n)
+{
     memset(prime, true, sizeof(prime));
     prime[0] = prime[1] = false;
 
-    for (int i = 2; i * i <= n; ++i) {
-        if (!prime[i]) continue;
+    for (int i = 2; i * i <= n; ++i)
+    {
+        if (!prime[i])
+            continue;
 
-        for (int j = i * i; j <= n; j += i) {
+        for (int j = i * i; j <= n; j += i)
+        {
             prime[j] = false;
         }
     }
@@ -146,11 +166,15 @@ void generatePrimes(int n) {
 // primeDivs[i] will contains all the prime divisors of number i.
 // O(n.log(log(n)))
 vector<int> primeDivs[N];
-void generatePrimeDivisors(int n) {
-    for (int i = 2; i <= n; ++i) {
-        if (primeDivs[i].size()) continue;
+void generatePrimeDivisors(int n)
+{
+    for (int i = 2; i <= n; ++i)
+    {
+        if (primeDivs[i].size())
+            continue;
 
-        for (int j = i; j <= n; j += i) {
+        for (int j = i; j <= n; j += i)
+        {
             primeDivs[j].push_back(i);
         }
     }
@@ -158,22 +182,26 @@ void generatePrimeDivisors(int n) {
 
 // Returns a list of divisors of the given number.
 // O(sqrt(n))
-vector<int> getDivisors(int n) {
-    vector<int> divs;
+vector<int> divsors;
+void getDivisors(int n)
+{
 
-    for (int i = 1; i * i <= n; ++i) {
-        if (n % i == 0) {
-            divs.push_back(i);
+    for (int i = 1; i * i <= n; ++i)
+    {
+        if (n % i == 0)
+        {
+            divsors.push_back(i);
 
-            if (i * i != n) {
-                divs.push_back(n / i);
+            if (i * i != n)
+            {
+                divsors.push_back(n / i);
             }
         }
     }
 
-    sort(divs.begin(), divs.end());
+    sort(divsors.begin(), divsors.end());
 
-    return divs;
+    return;
 }
 
 // Generates all the divisors of the numbers from 1 to n.
@@ -181,8 +209,49 @@ vector<int> getDivisors(int n) {
 // divs[i] will contains all the divisors of number i.
 // O(n.log(n))
 vector<int> divs[N];
-void generateDivisors(int n) {
+void generateDivisors(int n)
+{
     for (int i = 1; i <= n; ++i)
         for (int j = i; j <= n; j += i)
             divs[j].push_back(i);
+}
+int main()
+{
+    cout << "GCD 15 35 :"
+         << " " << gcd(15, 35) << " " << gcd_rec(15, 35) << endl;
+    cout << "LCM 15 35 :"
+         << " " << lcm(15, 35) << endl;
+    cout << "ExtendedEuclid(15,35)" << extendedEuclid(15, 35).first << " " << extendedEuclid(15, 35).second << endl;
+    cout << "3^5 " << power(3, 5, MOD) << " " << power_rec(3, 5, MOD) << endl;
+    cout << "ModeInverse 92 " << modInverse(92, 7) << endl;
+    cout << "15 choose 5 " << nCr(15, 5) << endl;
+    cout << (isPrime(17) ? "Yes" : "No") << endl;
+    cout << "Prime numbers less or equal to 15" << endl;
+    generatePrimes(15);
+    for (int i = 0; i < 15; ++i)
+    {
+        cout << prime[i] << " ";
+    }
+    cout << endl;
+    cout << "Prime divisors of first 10 numbers" << endl;
+    generatePrimeDivisors(10);
+    for (int i = 1; i <= 10; ++i)
+    {
+        cout << i << "-> ";
+        for (int j = 0; j < primeDivs[i].size(); ++j)
+        {
+            cout << primeDivs[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    getDivisors(32);
+    cout << "Divisors of 32" << endl;
+    for (int i = 0; i < divsors.size(); ++i)
+    {
+        cout << divsors[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
