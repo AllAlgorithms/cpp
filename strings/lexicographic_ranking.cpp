@@ -15,16 +15,16 @@
 // A utility function to find factorial of n
 int fact(int n)
 {
-    return (n <= 1)? 1 :n * fact(n-1);
+    return (n <= 1) ? 1 : n * fact(n - 1);
 }
 
 // A utility function to count smaller characters on right
 // of arr[low]
-int findSmallerInRight(char* str, int low, int high)
+int findSmallerInRight(char *str, int low, int high)
 {
     int countRight = 0, i;
 
-    for (i = low+1; i <= high; ++i)
+    for (i = low + 1; i <= high; ++i)
         if (str[i] < str[low])
             ++countRight;
 
@@ -33,7 +33,7 @@ int findSmallerInRight(char* str, int low, int high)
 
 // A function to find rank of a string in all permutations
 // of characters
-int findRank (char* str)
+int findRank(char *str)
 {
     int len = strlen(str);
     int mul = fact(len);
@@ -47,9 +47,9 @@ int findRank (char* str)
 
         // count number of chars smaller than str[i]
         // fron str[i+1] to str[len-1]
-        countRight = findSmallerInRight(str, i, len-1);
+        countRight = findSmallerInRight(str, i, len - 1);
 
-        rank += countRight * mul ;
+        rank += countRight * mul;
     }
 
     return rank;
@@ -59,6 +59,6 @@ int findRank (char* str)
 int main()
 {
     char str[] = ""; //Enter string here
-    printf ("%d", findRank(str));
+    printf("%d", findRank(str));
     return 0;
 }

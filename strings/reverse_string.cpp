@@ -13,21 +13,24 @@
 
 /* function prototype for utility function to
   reverse a string from begin to end  */
-void reverse(char* begin, char* end);
+void reverse(char *begin, char *end);
 
 /*Function to reverse words*/
-void reverseWords(char* s)
+void reverseWords(char *s)
 {
-    char* word_begin = s;
-    char* temp = s; /* temp is for word boundry */
+    char *word_begin = s;
+    char *temp = s; /* temp is for word boundry */
 
     /*STEP 1 of the above algorithm */
-    while (*temp) {
+    while (*temp)
+    {
         temp++;
-        if (*temp == '\0') {
+        if (*temp == '\0')
+        {
             reverse(word_begin, temp - 1);
         }
-        else if (*temp == ' ') {
+        else if (*temp == ' ')
+        {
             reverse(word_begin, temp - 1);
             word_begin = temp + 1;
         }
@@ -40,10 +43,11 @@ void reverseWords(char* s)
 /* UTILITY FUNCTIONS */
 /*Function to reverse any sequence starting with pointer
   begin and ending with pointer end  */
-void reverse(char* begin, char* end)
+void reverse(char *begin, char *end)
 {
     char temp;
-    while (begin < end) {
+    while (begin < end)
+    {
         temp = *begin;
         *begin++ = *end;
         *end-- = temp;
@@ -54,7 +58,7 @@ void reverse(char* begin, char* end)
 int main()
 {
     char s[] = ""; //Enter string here
-    char* temp = s;
+    char *temp = s;
     reverseWords(s);
     printf("%s", s);
     getchar();

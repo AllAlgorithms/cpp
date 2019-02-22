@@ -16,18 +16,18 @@
 #include <string.h>
 
 // A utility function to print a substring str[low..high]
-void printSubStr( char* str, int low, int high )
+void printSubStr(char *str, int low, int high)
 {
-    for( int i = low; i <= high; ++i )
+    for (int i = low; i <= high; ++i)
         printf("%c", str[i]);
 }
 
 // This function prints the longest palindrome substring
 // of str[].
 // It also returns the length of the longest palindrome
-int longestPalSubstr( char *str )
+int longestPalSubstr(char *str)
 {
-    int n = strlen( str ); // get length of input string
+    int n = strlen(str); // get length of input string
 
     // table[i][j] will be false if substring str[i..j]
     // is not palindrome.
@@ -42,11 +42,11 @@ int longestPalSubstr( char *str )
 
     // check for sub-string of length 2.
     int start = 0;
-    for (int i = 0; i < n-1; ++i)
+    for (int i = 0; i < n - 1; ++i)
     {
-        if (str[i] == str[i+1])
+        if (str[i] == str[i + 1])
         {
-            table[i][i+1] = true;
+            table[i][i + 1] = true;
             start = i;
             maxLength = 2;
         }
@@ -57,7 +57,7 @@ int longestPalSubstr( char *str )
     for (int k = 3; k <= n; ++k)
     {
         // Fix the starting index
-        for (int i = 0; i < n-k+1 ; ++i)
+        for (int i = 0; i < n - k + 1; ++i)
         {
             // Get the ending index of substring from
             // starting index i and length k
@@ -66,7 +66,7 @@ int longestPalSubstr( char *str )
             // checking for sub-string from ith index to
             // jth index iff str[i+1] to str[j-1] is a
             // palindrome
-            if (table[i+1][j-1] && str[i] == str[j])
+            if (table[i + 1][j - 1] && str[i] == str[j])
             {
                 table[i][j] = true;
 
@@ -80,7 +80,7 @@ int longestPalSubstr( char *str )
     }
 
     printf("Longest palindrome substring is: ");
-    printSubStr( str, start, start + maxLength - 1 );
+    printSubStr(str, start, start + maxLength - 1);
 
     return maxLength; // return length of LPS
 }
@@ -89,6 +89,6 @@ int longestPalSubstr( char *str )
 int main()
 {
     char str[] = ""; //Enter string here
-    printf("\nLength is: %d\n", longestPalSubstr( str ) );
+    printf("\nLength is: %d\n", longestPalSubstr(str));
     return 0;
 }

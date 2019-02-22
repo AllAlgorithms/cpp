@@ -9,16 +9,16 @@
 // Contributed by: Tushar Kanakagiri
 // Github: @tusharkanakagiri
 //
-# include <stdio.h>
-# include <stdlib.h>
-# define NO_OF_CHARS 256
+#include <stdio.h>
+#include <stdlib.h>
+#define NO_OF_CHARS 256
 
 /* Fills count array with frequency of characters */
 void fillCharCounts(char *str, int *count)
 {
-   int i;
-   for (i = 0; *(str+i);  i++)
-      count[*(str+i)]++;
+  int i;
+  for (i = 0; *(str + i); i++)
+    count[*(str + i)]++;
 }
 
 /* Print duplicates present in the passed string */
@@ -31,8 +31,8 @@ void printDups(char *str)
   // Print characters having count more than 0
   int i;
   for (i = 0; i < NO_OF_CHARS; i++)
-    if(count[i] > 1)
-        printf("%c,  count = %d \n", i,  count[i]);
+    if (count[i] > 1)
+      printf("%c,  count = %d \n", i, count[i]);
 
   free(count);
 }
@@ -40,8 +40,8 @@ void printDups(char *str)
 /* Driver program to test to pront printDups*/
 int main()
 {
-    char str[] = ""; //Enter string here
-    printDups(str);
-    getchar();
-    return 0;
+  char str[] = ""; //Enter string here
+  printDups(str);
+  getchar();
+  return 0;
 }

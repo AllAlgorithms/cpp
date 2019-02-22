@@ -22,18 +22,22 @@ getFiles('../', (err, res) => {
   if (err) {
     console.log('Error', err);
   } else {
+    let invalid = false;
     res.map((file) => {
       // Accept only valid C++ Files (.cpp,.hpp,.h)
       if (path.extname(file) !== '.cpp' && path.extname(file) !== '.hpp' && path.extname(file) !== '.h') {
         return;
       }
 
-      if (file !== decamelize(file)) {
-        console.log(`The file ${chalk.red(path.basename(file))} does not follow the correct style.`);
-        // Stop when a file with wrong format is found
-        throw new TypeError(`File project style does not follow the All ▲lgorithms structure.`);
+      if (file !== decamelize(file.replace(' ', ''))) {
+        console.log(`${chalk.red(path.basename(file))} does not follow the correct style.`);
+        let invalid = true;
       }
-      console.log(`The file ${chalk.green(path.basename(file))} is ok.`);
+      console.log(`${chalk.green(path.basename(file))} is ok.`);
     });
+    if (invalid) {
+      // Throw an error at the end of checking all files
+      throw new TypeError(`Expected the All ▲lgorithms structure.`);
+    }
   }
 });
