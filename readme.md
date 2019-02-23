@@ -168,7 +168,9 @@ You can find the All ▲lgorithms categories at [algorithms.com/categories](http
 
 ## License
 
-This work is released under [MIT License][MIT] [![MIT IMG][MIT-logo]][MIT]
+This work is released under [MIT License][MIT]
+
+[![MIT IMG][MIT-logo]][MIT]
 
 To the extent possible under law, [Carlos Abraham](https://go.abranhe.com/github) has waived all copyright and related or neighboring rights to this work.
 

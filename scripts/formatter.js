@@ -1,6 +1,6 @@
 /**
  * The All Algorithms C++ Formatter
- * 
+ *
  * Author: Carlos Abraham Hernandez
  * https://abranhe.com (abraham@abranhe.com)
  */
@@ -152,6 +152,7 @@ getFiles('../', (err, res) => {
 ## License
 
 This work is released under [MIT License][MIT]
+
 [![MIT IMG][MIT-logo]][MIT]
 
 To the extent possible under law, [Carlos Abraham](https://go.abranhe.com/github) has waived all copyright and related or neighboring rights to this work.
