@@ -136,4 +136,4 @@ If you are modifying an algorithm make sure you add a benchmark using [Repl.it](
 
 #### Lastly and not less important:
 
-Make sure you start ⭐️ and follow [@abranhe](https://git.io/abranhe)
+Make sure you start ⭐️ and follow [@abranhe](https://github.com/abranhe)

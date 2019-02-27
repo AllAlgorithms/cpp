@@ -1,18 +1,19 @@
+#!/usr/bin/env node
+'use strict';
+
 /**
- * validate.js
- * 
  * The All ▲lgorithms validator CLI
+ * 
+ * Usage: node validate.js
  * 
  * Author: Carlos Abraham Hernandez
  * https://abranhe.com (abraham@abranhe.com)
  */
-'use strict';
 
 const glob = require('glob');
 const path = require('path');
 const decamelize = require('decamelize');
 const chalk = require('chalk');
-const shell = require('child_process').execSync;
 
 const getFiles = (src, callback) => {
   glob(src + '/**', callback);
