@@ -59,6 +59,7 @@ You can find the All ▲lgorithms categories at [algorithms.com/categories](http
 ## Artificial intelligence
 
  - [Togasat](artificial-intelligence/togasat.cpp)
+ - [K Means Clustering](artificial-intelligence/K-Means-Clustering/KMean.cpp)
 
 ## Backtracking
 
