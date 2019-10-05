@@ -71,7 +71,7 @@ You can find the All ▲lgorithms categories at [algorithms.com/categories](http
  - [Linkedlist adt](data-structures/linkedlist/linkedlist_adt.cpp)
  - [Circular buffer](data-structures/queue/circular_buffer.cpp)
  - [Queue](data-structures/queue/queue.cpp)
- - [Stack](data-structures/stack/stack.cpp)
+ - [Stack](data-structures/stack/)
 
 ## Dynamic programming
 
