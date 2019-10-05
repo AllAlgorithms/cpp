@@ -1,3 +1,15 @@
+//
+// Stack implemented on class (array inside)
+// More documentation about the algorithm
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Carlos Abraham Hernandez
+// Github: @TheBestTvarynka
+//
 #include <iostream>
 
 using namespace std;
