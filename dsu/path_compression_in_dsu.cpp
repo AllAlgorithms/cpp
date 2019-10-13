@@ -42,8 +42,8 @@ int find_parent_path_compression(int val)
 
 void union_set(int x, int y)
 {
-    x = find_parent(x);
-    y = find_parent(y);
+    x = find_parent_path_compression(x);
+    y = find_parent_path_compression(y);
     if(x != y)
     {
         parent[y] = x;
@@ -61,7 +61,7 @@ int main()
     }
     union_set(elements[2], elements[4]);
     union_set(elements[1], elements[4]);
-    if (find_parent(elements[2]) != find_parent(elements[1]))
+    if (find_parent_path_compression(elements[2]) != find_parent_path_compression(elements[1]))
     {
         cout<<"The union set method failed!! \n";
     }
