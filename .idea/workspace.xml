@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a920d3c-3701-43d6-83a3-f8ca18ed640f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dynamic-programming/golomb_sequence.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dynamic-programming/golomb_sequence.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamic-programming/newman_conway_sequence.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,10 +14,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dynamic-programming/golomb_sequence.cpp">
+        <entry file="file://$PROJECT_DIR$/dynamic-programming/newman_conway_sequence.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="459">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -31,6 +32,7 @@
       <list>
         <option value="$PROJECT_DIR$/dynamic-programming/largest_sum_contiguous_subarray.cpp" />
         <option value="$PROJECT_DIR$/dynamic-programming/golomb_sequence.cpp" />
+        <option value="$PROJECT_DIR$/dynamic-programming/newman_conway_sequence.cpp" />
       </list>
     </option>
   </component>
@@ -45,7 +47,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -62,6 +63,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -95,7 +97,8 @@
       <updated>1571643102463</updated>
       <workItem from="1571643121697" duration="2603000" />
       <workItem from="1571648560802" duration="1380000" />
-      <workItem from="1571650388746" duration="221000" />
+      <workItem from="1571650388746" duration="1047000" />
+      <workItem from="1571651481253" duration="374000" />
     </task>
     <task id="LOCAL-00001" summary="Minor:Changed workspace">
       <created>1571646697584</created>
@@ -115,7 +118,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4204000" />
+    <option name="totallyTimeSpent" value="5404000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -130,7 +133,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26172465" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2700454" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -205,8 +208,15 @@
     <entry file="file://$PROJECT_DIR$/dynamic-programming/largest_sum_contiguous_subarray.cpp" />
     <entry file="file://$PROJECT_DIR$/dynamic-programming/golomb_sequence.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="260">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynamic-programming/newman_conway_sequence.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
