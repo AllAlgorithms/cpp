@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a920d3c-3701-43d6-83a3-f8ca18ed640f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dynamic-programming/newman_conway_sequence.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamic-programming/largest_divisible_pairs_subset.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,10 +14,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dynamic-programming/newman_conway_sequence.cpp">
+        <entry file="file://$PROJECT_DIR$/dynamic-programming/largest_divisible_pairs_subset.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="289">
+              <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -33,10 +33,11 @@
         <option value="$PROJECT_DIR$/dynamic-programming/largest_sum_contiguous_subarray.cpp" />
         <option value="$PROJECT_DIR$/dynamic-programming/golomb_sequence.cpp" />
         <option value="$PROJECT_DIR$/dynamic-programming/newman_conway_sequence.cpp" />
+        <option value="$PROJECT_DIR$/dynamic-programming/largest_divisible_pairs_subset.cpp" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -98,7 +99,8 @@
       <workItem from="1571643121697" duration="2603000" />
       <workItem from="1571648560802" duration="1380000" />
       <workItem from="1571650388746" duration="1047000" />
-      <workItem from="1571651481253" duration="374000" />
+      <workItem from="1571651481253" duration="1037000" />
+      <workItem from="1571652548928" duration="155000" />
     </task>
     <task id="LOCAL-00001" summary="Minor:Changed workspace">
       <created>1571646697584</created>
@@ -118,7 +120,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5404000" />
+    <option name="totallyTimeSpent" value="6222000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -130,10 +132,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="676" y="0" width="697" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2700454" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3610675" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -147,7 +149,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32890365" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5023548" side_tool="true" weight="0.33388704" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4976452" visible="true" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4976452" visible="true" weight="0.33388704" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -215,8 +217,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dynamic-programming/newman_conway_sequence.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="342">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynamic-programming/largest_divisible_pairs_subset.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
         </state>
       </provider>
     </entry>
