@@ -96,6 +96,7 @@ You can find the All ▲lgorithms categories at [algorithms.com/categories](http
  - [Floyd warshall](graphs/floyd_warshall.cpp)
  - [Prims adjacency list](graphs/prims_adjacency_list.cpp)
  - [Toposort](graphs/toposort.cpp)
+ - [Kruskal](graphs/kruskal.cpp)
 
 ## Math
 
