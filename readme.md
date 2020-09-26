@@ -125,6 +125,7 @@ You can find the All ▲lgorithms categories at [algorithms.com/categories](http
 ## Searches
 
  - [Binary search](searches/binary_search.cpp)
+ - [Binary search for floating point](searches/binary_search_float.cpp)
  - [Exponential search](searches/exponential_search.cpp)
  - [Jump search](searches/jump_search.cpp)
  - [Linear search](searches/linear_search.cpp)
