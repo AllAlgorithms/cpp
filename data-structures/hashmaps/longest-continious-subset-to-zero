@@ -1,0 +1,51 @@
+/*
+Given an array consisting of positive and negative integers, find the length of the longest continuous subset whose sum is zero.
+To be done in O(n) time complexity.
+
+Eg: Array size: 10 
+    Array: 95 -97 -387 -435 -5 -70 897 127 23 284
+    Then the length longest continious subset/sequence which sums up to zero is 5
+    Since the longest continious subset which sums up to zero is -387 -435 -5 -70 897.
+
+This program makes use of hashmaps and the STL is unordered_map.
+*/
+#include<iostream>
+#include <unordered_map>
+using namespace std;
+
+int lengthOfLongestSubsetWithZeroSum(int* arr, int size){
+    unordered_map<int, int> mymap;
+    int sum = 0;
+    int maxLength = -1;
+    for(int i = 0; i < size; i++){
+        sum += arr[i];
+        int length = 0;
+        
+        if(sum == 0){
+            length = i+1;
+        }else if(mymap.count(sum)){
+            length = i - mymap[sum];
+
+        }else{
+            mymap[sum] = i;
+        }
+
+        if(length > maxLength){
+            maxLength = length;
+        }
+    }
+    return maxLength;
+}
+
+int main(){
+  int size;
+  
+  cin >> size;
+  int* arr = new int[size];
+  for(int i = 0; i < size; i++){
+    cin >> arr[i];
+  }
+  int ans = lengthOfLongestSubsetWithZeroSum(arr,size);
+  cout << ans << endl;
+  delete arr;
+}
