@@ -1,96 +1,81 @@
-#include<bits/stdc++.h>
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/graphs/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Leonardo Su
+// Github: @Leonardosu
+
+#include <bits/stdc++.h>
+#define f first
+#define s second
+#define mp make_pair
+#define pb push_back
+
 using namespace std;
-class graph
+
+const int N = 100010;
+typedef pair<int,int> ii;
+typedef pair<int,ii> iii;
+vector<iii> edges;
+
+int p[N],lv[N];
+int total_cost = 0,n,m;
+
+//Union-Find
+//-------
+int find(int x)
 {
-     int v,adj[100][100];
-public:
-     void read()
-        {
-            int i,j,e,v1,v2,c;
+	if(p[x] == x) return x;
+	return p[x] = find(p[x]);
+}
 
-            cout<<"vertex,edges"<<endl;
-            cin>>v>>e;
-            for(i=0;i<v;i++)
-            {
-                for(j=0;j<v;j++)
-                {
-                    adj[i][j]=999;
+void join(int x,int y)
+{
+	x = find(x);
+	y = find(y);
 
-                }
-            }
+	if(x == y) return;
+	if(lv[x] < lv[y]) p[x] = y;
+	else if(lv[x] > lv[y]) p[y] = x;
+	else
+	{
+		p[x] = y;
+		lv[y]++;
+	}	
+}
+//-------
 
-            for(i=0;i<e;i++)
-            {   cout<<"Enter edge, cost"<<endl;
-                cin>>v1>>v2>>c;
-                adj[v1][v2]=adj[v2][v1]=c;
-            }
-            return;
-        }
-        int find(int v,int p[])
-        {
-            while(p[v]!=v)
-                v=p[v];
-            return v;
-        }
-        void unionij(int i,int j,int p[])
-        {
-            if(i<j)
-                p[j]=i;
-            else
-                p[i]=j;
-        }
-        void kruskal()
-        {
-            int i,j,t[100][2],k=0,min,sum=0,p[v],count=0,v1,v2;
-            for(i=0;i<v;i++)
-                p[i]=i;
-                while(count<v)
-                {
-                    min=999;
-                    for(i=0;i<v;i++)
-                    {
-                        for(j=0;j<v;j++)
-                        {
-                            if(adj[i][j]<min)
-                            {
-                                min=adj[i][j];
-                                v1=i;
-                                v2=j;
-                            }
-                        }
-                    }
-                    if(min==999)break;
-                    i=find(v1,p);
-                    j=find(v2,p);
-                    if(i!=j)
-                    {
-                        t[k][0]=i;
-                        t[k][1]=j;
-                        k++;
 
-                        sum+=min;
-                        count++;
-                        unionij(i,j,p);
-
-                    }
-                    adj[v1][v2]=adj[v2][v1]=999;
-                }
-                if(count==v-1)
-                {
-                    cout<<"Spanning tree is:"<<endl;
-                    for(i=0;i<v-1;i++)
-                        cout<<"Edge "<<t[i][0]<<"-->"<<t[i][1]<<endl;
-                    cout<<endl<<"Cost : "<<sum<<endl;
-                    return;
-                }
-
-            cout<<"Spanning tree doesn't exist"<<endl;
-
-        }
-};
 int main()
 {
-    graph g;
-    g.read();
-    g.kruskal();
+
+	cin>>n>>m; // "n" is the  number of vertex and "m" = number of edges
+
+	for(int i=1;i<=n;++i)
+		p[i] = i,lv[i] = 0;
+
+	int a,b,c;
+	for(int i=1;i<=m;++i) // Read the input, there is an edge between "a" and "b" with cost c
+	{
+		cin>>a>>b>>c;
+		edges.pb(mp(c,mp(a,b) ));
+	}
+
+	// Kruskal 
+	// --------
+	sort(edges.begin(),edges.end());
+
+	for(int i=0;i<edges.size();++i)
+	{
+		int a = edges[i].s.f;
+		int b = edges[i].s.s;
+		if(find(a) != find(b))
+		{
+			join(a,b);
+			total_cost+=edges[i].f;
+		}
+	}
+	// --------
+	cout<<total_cost<<"\n";
 }
