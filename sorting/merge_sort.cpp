@@ -1,110 +1,80 @@
-//
-// C++ implementation of merge sort
+// C++ implementation of Bubble Sort(Optimised Solution).
 //
 // The All ▲lgorithms Project
 //
-// https://allalgorithms.com/sorting
+// https://allalgorithms.com/
 // https://github.com/allalgorithms/cpp
 //
-// Contributed by: Carlos Abraham Hernandez
-// Github: @abranhe (abraham@abranhe.com)
+// Contributed by: Abhishek Jaiswal
+// Github: @abhishek-iiit
 //
-#include <iostream>
+#include<stdio.h>
+#include<iostream>
 
-// Merge the two half into a sorted data.
-void merge(int arr[], int l, int m, int r)
-{
-    int i, j, k;
-    int n1 = m - l + 1;
-    int n2 =  r - m;
+using namespace std;
 
-    /* create temp arrays */
-    int* L = new int[n1];
-    int* R = new int[n2];
-    /* Copy data to temp arrays L[] and R[] */
-    for (i = 0; i < n1; i++)
-        L[i] = arr[l + i];
-    for (j = 0; j < n2; j++)
-        R[j] = arr[m + 1+ j];
+void merge(int *array, int l, int m, int r) {
+   int i, j, k, nl, nr;
+   //size of left and right sub-arrays
 
-    /* Merge the temp arrays back into arr[l..r]*/
-    i = 0; // Initial index of first subarray
-    j = 0; // Initial index of second subarray
-    k = l; // Initial index of merged subarray
-    while (i < n1 && j < n2)
-    {
-        if (L[i] <= R[j])
-        {
-            arr[k] = L[i];
-            i++;
-        }
-        else
-        {
-            arr[k] = R[j];
-            j++;
-        }
-        k++;
-    }
+   nl = m-l+1; nr = r-m;
+   int larr[nl], rarr[nr];
 
-    /* Copy the remaining elements of L[], if there
-       are any */
-    while (i < n1)
-    {
-        arr[k] = L[i];
-        i++;
-        k++;
-    }
+   //fill left and right sub-arrays
+   for(i = 0; i<nl; i++)
+      larr[i] = array[l+i];
+   for(j = 0; j<nr; j++)
+      rarr[j] = array[m+1+j];
+   i = 0; j = 0; k = l;
 
-    /* Copy the remaining elements of R[], if there
-       are any */
-    while (j < n2)
-    {
-        arr[k] = R[j];
-        j++;
-        k++;
-    }
-    delete[] L;
-    delete[] R;
+   //merge temp arrays to real array
+   while(i < nl && j<nr) {
+      if(larr[i] <= rarr[j]) {
+         array[k] = larr[i];
+         i++;
+      }else{
+         array[k] = rarr[j];
+         j++;
+      }
+      k++;
+   }
+   while(i<nl) {       //extra element in left array
+      array[k] = larr[i];
+      i++; k++;
+   }
+   while(j<nr) {     //extra element in right array
+      array[k] = rarr[j];
+      j++; k++;
+   }
 }
 
-/* l is for left index and r is right index of the
-   sub-array of arr to be sorted */
-void merge_sort(int arr[], int l, int r)
-{
-    if (l < r)
-    {
-        // Same as (l+r)/2, but avoids overflow for
-        // large l and h
-        int m = l + (r - l) / 2;
-
-        // Sort first and second halves
-        merge_sort(arr, l, m);
-        merge_sort(arr, m + 1, r);
-
-        merge(arr, l, m, r);
-    }
+void mergeSort(int *array, int l, int r) {
+   int m;
+   if(l < r) {
+      int m = l+(r-l)/2;
+      // Sort first and second arrays
+      mergeSort(array, l, m);
+      mergeSort(array, m+1, r);
+      merge(array, l, m, r);
+   }
 }
 
-/* UTILITY FUNCTIONS */
-// A utility function to print an array of size n
-void print_array(int arr[], int n)
-{
-   for (size_t i = 0; i < n; i++)
-    {
-       std::cout << arr[i] << " ";
-    }
-    std::cout << std::endl;
-}
-
-/* Driver program to test above functions */
 int main()
 {
-    int arr[] = {12, 11, 13, 5, 6, 7};
-    int arr_size = sizeof(arr)/sizeof(arr[0]);
-    std::cout << "Unsorted array:" << std::endl;
-    print_array(arr, arr_size);
-    merge_sort(arr, 0, arr_size - 1);
-    std::cout << "Sorted array:" << std::endl;
-    print_array(arr, arr_size);
+    int n;
+    cout<<"Input the total size :"<<endl;
+    cin>>n;
+    int arr[n];
+    cout<<"Input the number one-by-one :"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    mergeSort(arr,0,n-1);
+    cout<<"Sorted array:"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
     return 0;
 }

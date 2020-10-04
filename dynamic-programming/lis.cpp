@@ -1,42 +1,39 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
+#include<stdio.h> 
+#include<stdlib.h> 
+  
+/* lis() returns the length of the longest increasing 
+  subsequence in arr[] of size n */
+int lis( int arr[], int n ) 
+{ 
+    int *lis, i, j, max = 0; 
+    lis = (int*) malloc ( sizeof( int ) * n ); 
+  
+    /* Initialize LIS values for all indexes */
+    for (i = 0; i < n; i++ ) 
+        lis[i] = 1; 
+  
+    /* Compute optimized LIS values in bottom up manner */
+    for (i = 1; i < n; i++ ) 
+        for (j = 0; j < i; j++ )  
+            if ( arr[i] > arr[j] && lis[i] < lis[j] + 1) 
+                lis[i] = lis[j] + 1; 
+  
+    /* Pick maximum of all LIS values */
+    for (i = 0; i < n; i++ ) 
+        if (max < lis[i]) 
+            max = lis[i]; 
+  
+    /* Free memory to avoid memory leak */
+    free(lis); 
+  
+    return max; 
+} 
 
-const int INF = 2e9 + 10;
-
-void printArray(std :: vector <int> arr){
-    std :: cout << '[';
-    const int n = arr.size();
-    for(int i = 0; i != n; ++ i){
-        if(i) std :: cout << ", ";
-        std :: cout << arr[i];
-    }
-    std :: cout << ']';
-}
-
-int LIS(std :: vector <int> arr){
-    const int n = arr.size() + 1;
-    int dp[n];
-    dp[0] = -INF;
-    for(int i = 1; i < n; ++ i){
-        dp[i] = INF;
-    }
-    int pos = 0;
-    for(int i = 0; i != n - 1; ++ i){
-        int cur = std :: upper_bound(dp, dp + n, arr[i]) - dp;
-        if(dp[cur] > arr[i]) dp[cur] = arr[i];
-    }
-    for(int i = 0; i != n; ++ i){
-        if(dp[i] == INF) break;
-        pos = i;
-    }
-    return pos;
-}
-
-int main(){
-    std :: vector <int> array = {3, 4, 5, 2, 6, 7};
-    std :: cout << "The Longest Increasing sequence of ";
-    printArray(array);
-    std :: cout << " is " << LIS(array);
-    return 0;
-}
+int main() 
+{ 
+    /* Driver program to find Longest Increasing Subsequence */
+    int arr[] = { 10, 22, 9, 33, 21, 50, 41, 60 }; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    printf("Length of lis is %d", lis( arr, n ) ); 
+    return 0; 
+} 
