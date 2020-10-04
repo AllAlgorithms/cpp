@@ -1,81 +1,81 @@
+//
+// The following is C++ implementation of Kruskal's algorithm
+//  on a graph.  
+
+// Kruskal's Algorithm is used to find minimum spanning tree
+// of a graph .
+// Here 'Disjoint Sets' method is used for cycle detection.
+// Disjoint sets are sets whose intersection is empty set 
+// if they don't have any common element 
+
 // The All ▲lgorithms Project
 //
 // https://allalgorithms.com/graphs/
 // https://github.com/allalgorithms/cpp
 //
-// Contributed by: Leonardo Su
-// Github: @Leonardosu
+// Contributed by: Himanshu Airan
+// Github: @Himanshu-77
+//
 
-#include <bits/stdc++.h>
-#define f first
-#define s second
-#define mp make_pair
-#define pb push_back
 
+#include<bits/stdc++.h>
 using namespace std;
 
-const int N = 100010;
-typedef pair<int,int> ii;
-typedef pair<int,ii> iii;
-vector<iii> edges;
+const int MAX = 1e4 + 5;
+int id[MAX] ;
 
-int p[N],lv[N];
-int total_cost = 0,n,m;
 
-//Union-Find
-//-------
-int find(int x)
+int root(int x)
 {
-	if(p[x] == x) return x;
-	return p[x] = find(p[x]);
+    while(id[x] != x)
+    {
+        id[x] = id[id[x]];
+        x = id[x];
+    }
+    return x;
 }
-
-void join(int x,int y)
-{
-	x = find(x);
-	y = find(y);
-
-	if(x == y) return;
-	if(lv[x] < lv[y]) p[x] = y;
-	else if(lv[x] > lv[y]) p[y] = x;
-	else
-	{
-		p[x] = y;
-		lv[y]++;
-	}	
-}
-//-------
-
 
 int main()
 {
+    int nodes, edges, x, y, weight;
+    int cost, minimumCost=0 ;
+    pair <int, pair<int, int> > Graph[MAX];
 
-	cin>>n>>m; // "n" is the  number of vertex and "m" = number of edges
+    // initially all elements are in different sets
+    for(int i = 0;i < MAX;++i)
+        id[i] = i;
 
-	for(int i=1;i<=n;++i)
-		p[i] = i,lv[i] = 0;
 
-	int a,b,c;
-	for(int i=1;i<=m;++i) // Read the input, there is an edge between "a" and "b" with cost c
-	{
-		cin>>a>>b>>c;
-		edges.pb(mp(c,mp(a,b) ));
-	}
+    // input number of nodes and edges in graph
+    cin >> nodes >> edges;
+    for(int i = 0;i < edges;++i)
+    {
+        cin >> x >> y >> weight;
+        Graph[i] = make_pair(weight, make_pair(x, y));
+    }
 
-	// Kruskal 
-	// --------
-	sort(edges.begin(),edges.end());
+    // Sort the edges in the ascending order of weights
+    sort(Graph, Graph + edges);
 
-	for(int i=0;i<edges.size();++i)
-	{
-		int a = edges[i].s.f;
-		int b = edges[i].s.s;
-		if(find(a) != find(b))
-		{
-			join(a,b);
-			total_cost+=edges[i].f;
-		}
-	}
-	// --------
-	cout<<total_cost<<"\n";
+    // find weight of minimum spanning tree
+    for(int i = 0;i < edges;++i)
+    {
+        // Selecting edges one by one in increasing order from the beginning
+        x = Graph[i].second.first;
+        y = Graph[i].second.second;
+        cost = Graph[i].first;
+        // Check if the selected edge is creating a cycle or not
+        if(root(x) != root(y))
+        {
+            minimumCost += cost;
+
+            // join sets of both elements
+            id[root(x)] = id[root(y)];
+        }    
+    }
+
+
+    cout << "Cost of minimum spanning tree is : "
+         << minimumCost << endl;
+    return 0;
 }
