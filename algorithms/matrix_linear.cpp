@@ -1,3 +1,4 @@
+// represent linear equation in form of matrix
 #include<iostream.h>
 #include<conio.h>
  

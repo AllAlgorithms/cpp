@@ -1,3 +1,4 @@
+// The sum of all factorials of n!
 #include<iostream>
 
 using namespace std;

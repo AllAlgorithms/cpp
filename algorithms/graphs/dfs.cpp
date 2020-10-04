@@ -1,69 +1,65 @@
-//
-// Depth-first search algorithm implementation in C++
-//
-// The All ▲lgorithms Project
-//
-// https://allalgorithms.com/graphs/
-// https://github.com/allalgorithms/cpp
-//
-// Contributed by: Nikunj Taneja
-// Github: @underscoreorcus
-//
-#include<iostream>
-#include<list>
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+#include <iterator>
 using namespace std;
 
-// Graph class represents a directed graph
-// using adjacency list representation
-class Graph
-{
-    int V;
-    list<int> *adj;
-    void DFSUtil(int v, bool visited[]);
-public:
-    Graph(int V);
-    void addEdge(int v, int w);
-    void DFS(int v);
-};
+vector<bool> visited; //this vector will mark visited components
+vector<vector<int> > graph; //this will store the graph represented internally as an adjacency list
+//this is because the adjacency list representation is the most suited to use DFS procedure on a given graph
 
-Graph::Graph(int V)
-{
-    this->V = V;
-    adj = new list<int>[V];
-}
+int sz_connect_comp = 0; //this will store the size of current connected component (problem-specific feature)
 
-void Graph::addEdge(int v, int w)
+void dfs(int v)
 {
-    adj[v].push_back(w); // Add w to v’s list.
-}
-
-void Graph::DFSUtil(int v, bool visited[])
-{
-    visited[v] = true;
-    cout << v << " ";
-    list<int>::iterator i;
-    for (i = adj[v].begin(); i != adj[v].end(); ++i)
-        if (!visited[*i])
-            DFSUtil(*i, visited);
-}
-void Graph::DFS(int v)
-{
-    bool *visited = new bool[V];
-    for (int i = 0; i < V; i++)
-        visited[i] = false;
-    DFSUtil(v, visited);
+	sz_connect_comp++; //"useful feature" performed on this DFS, this can vary from problem to problem
+	visited[v] = true;
+	
+	for(vector<int>::iterator it = graph[v].begin(); it != graph[v].end(); it++)
+	{
+		if(! visited[*it]) //note that *it represents the adjacent vertex itself
+		{
+			dfs(*it);
+		}
+	}
 }
 
 int main()
 {
-    Graph g(4);
-    g.addEdge(0, 1);
-    g.addEdge(0, 2);
-    g.addEdge(1, 2);
-    g.addEdge(2, 0);
-    g.addEdge(2, 3);
-    g.addEdge(3, 3);
-    cout << "Following is Depth First Traversal (starting from vertex 2)\n";
-    g.DFS(2);
-    return 0;
+	int t;
+	cin >> t;
+	while(t--)
+	{
+		int n,m;
+		cin >> n >> m;
+		graph = vector<vector<int> > (n); //initialization of the graph
+		for(int i = 0; i < m; i++)
+		{
+			int u,v;
+			cin >> u >> v;
+			u--;
+			v--;
+			//these are added this way due to the friendship relation being mutual
+			graph.push_back(v);
+			graph[v].push_back(u);
+		}
+		int res = 0; // the number of fire escape routes
+		int ways = 1; // the number of ways to choose drill captains
+		visited = vector<bool> (n, 0); // initially mark all vertices as unvisited 
+		for(int u = 0; u < n; u++)
+		{
+			//if the vertex was visited we skip it.
+			if(visited==true)
+				continue;
+			// if vertex was not visited it starts a new component
+			res++; // so we increase res
+			sz_connect_comp = 0; // init sz_connect_comp
+			dfs(u); // and calculate it through the dfs, marking visited vertices
+			// we multiply ways by sz_connect_comp modulo 1000000007
+			ways = (long long)sz_connect_comp * ways % 1000000007;
+		}
+		printf("%d %d", res, ways);
+
+	}
+	return 0;
 }

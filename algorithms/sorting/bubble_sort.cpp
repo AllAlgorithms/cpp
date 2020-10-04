@@ -1,58 +1,54 @@
-//
-// C++ implementation of bubble sort
+// C++ implementation of Bubble Sort(Optimised Solution).
 //
 // The All ▲lgorithms Project
 //
-// https://allalgorithms.com/sorting
+// https://allalgorithms.com/
 // https://github.com/allalgorithms/cpp
 //
-// Contributed by: Carlos Abraham Hernandez
-// Github: @abranhe
+// Contributed by: Abhishek Jaiswal
+// Github: @Abhishek-iiit
 //
-#include <iostream>
+#include<stdio.h>
+#include<iostream>
 
-// Swap elements
-void swap(int *x, int *y)
-{
-	int temp = *x;
-	*x = *y;
-	*y = temp;
-}
+using namespace std;
 
-// Implement bubble sort
-void bubble_sort(int arr[], size_t n)
-{
-   for (size_t i = 0; i < n - 1; i++)
-   {
-	   	// last i elements are already in place
-		for (size_t j = 0; j < n-i-1; j++)
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				swap(&arr[j], &arr[j + 1]);
-			}
-		}
-   }
-}
-
-// A utility function to print an array of size n
-void print_array(int arr[], int n)
-{
-   for (size_t i = 0; i < n; i++)
-    {
-       std::cout << arr[i] << " ";
-    }
-    std::cout << std::endl;
-}
+void bubbleSort(int arr[], int n) 
+{ 
+   int i, j; 
+   bool changed; 
+   for (i = 0; i < n-1; i++) 
+   { 
+     changed = false; 
+     for (j = 0; j < n-i-1; j++) 
+     { 
+        if (arr[j] > arr[j+1]) 
+        { 
+           swap(arr[j],arr[j+1]); 
+            changed = true; 
+        } 
+     } 
+     if (changed == false)
+        break; 
+   } 
+} 
 
 int main()
 {
-	int arr[] = {46, 24, 33, 10, 2, 81, 50};
-	int n = sizeof(arr)/sizeof(arr[0]);
-	std::cout << "Unsorted array:" << std::endl;
-	print_array(arr, n);
-	bubble_sort(arr, n);
-  	std::cout << "Sorted array:" << std::endl;
-	print_array(arr, n);
-  	return 0;
+    int n;
+    cout<<"Input the total size :"<<endl;
+    cin>>n;
+    int arr[n];
+    cout<<"Input the number one-by-one :"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    bubbleSort(arr,n);
+    cout<<"Sorted array:"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
 }

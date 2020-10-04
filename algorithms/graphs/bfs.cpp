@@ -1,98 +1,68 @@
-//
-// Breadth-first search implementation in C++
-//
-// The All ▲lgorithms Project
-//
-// https://allalgorithms.com/graphs/
-// https://github.com/allalgorithms/cpp
-//
-// Contributed by: Nikunj Taneja
-// Github: @underscoreorcus
-//
-#include<iostream>
-#include <list>
-
+#include<bits/stdc++.h>
 using namespace std;
-
-class Graph
+char mx[100][100];
+bool visited[100][100];
+int V,E,k,l,N,M;
+bool isvalid(int x,int y)
 {
-    int V;    // No. of vertices
-
-    // Pointer to an array containing adjacency
-    // lists
-    list<int> *adj;
-public:
-    Graph(int V);  // Constructor
-
-    // function to add an edge to graph
-    void addEdge(int v, int w);
-
-    // prints BFS traversal from a given source s
-    void BFS(int s);
-};
-
-Graph::Graph(int V)
-{
-    this->V = V;
-    adj = new list<int>[V];
+    if(x<=N && y<=M && x>=1 && y>=1)
+        return true;
+    return false;
 }
-
-void Graph::addEdge(int v, int w)
+bool bfs(int x,int y)
 {
-    adj[v].push_back(w); // Add w to v’s list.
-}
-
-void Graph::BFS(int s)
+    for(int i=1;i<100;i++)
+        for(int j=1;j<100;j++)
+        visited[i][j]=0;
+queue<pair<int,int > > q;
+q.push({x,y});
+visited[x][y]=1;
+while(!q.empty())
 {
-    // Mark all the vertices as not visited
-    bool *visited = new bool[V];
-    for(int i = 0; i < V; i++)
-        visited[i] = false;
-
-    // Create a queue for BFS
-    list<int> queue;
-
-    // Mark the current node as visited and enqueue it
-    visited[s] = true;
-    queue.push_back(s);
-
-    // 'i' will be used to get all adjacent
-    // vertices of a vertex
-    list<int>::iterator i;
-
-    while(!queue.empty())
-    {
-        // Dequeue a vertex from queue and print it
-        s = queue.front();
-        cout << s << " ";
-        queue.pop_front();
-
-        // Get all adjacent vertices of the dequeued
-        // vertex s. If a adjacent has not been visited,
-        // then mark it visited and enqueue it
-        for (i = adj[s].begin(); i != adj[s].end(); ++i)
-        {
-            if (!visited[*i])
-            {
-                visited[*i] = true;
-                queue.push_back(*i);
-            }
-        }
-    }
+     x=q.front().first;
+    y=q.front().second;
+    visited[x][y]=true;
+    q.pop();
+    if(isvalid(x,y+1) && !visited[x][y+1] && mx[x][y+1]==mx[x][y])
+    q.push({x,y+1});
+    if(isvalid(x,y-1) && !visited[x][y-1] && mx[x][y-1]==mx[x][y])
+    q.push({x,y-1});
+    if(isvalid(x+1,y) && !visited[x+1][y] && mx[x+1][y]==mx[x][y])
+    q.push({x+1,y});
+    if(isvalid(x-1,y) && !visited[x-1][y] && mx[x-1][y]==mx[x][y])
+    q.push({x-1,y});
+    int counter=0;
+    if(visited[x][y+1])
+        counter++;
+    if(visited[x][y-1])
+    counter++;
+    if(visited[x+1][y])
+        counter++;
+    if(visited[x-1][y])
+        counter++;
+    if(counter>1)
+        return true;
+ 
 }
-
+return false;
+}
+ 
 int main()
 {
-    // Sample graph
-    Graph g(4);
-    g.addEdge(0, 1);
-    g.addEdge(0, 2);
-    g.addEdge(1, 2);
-    g.addEdge(2, 0);
-    g.addEdge(2, 3);
-    g.addEdge(3, 3);
-    cout << "Following is Breadth First Traversal "
-         << "(starting from vertex 2) \n";
-    g.BFS(2);
+    cin>>N>>M;
+    for(int i=1;i<=N;i++)
+        for(int j=1;j<=M;j++)
+        cin>>mx[i][j];
+    for(int i=1;i<=N;i++)
+        for(int j=1;j<=M;j++)
+        if( bfs(i,j)){
+            cout<<"Yes";
+    return 0;
+        }
+ 
+    cout<<"No";
+ 
+ 
+ 
     return 0;
 }
