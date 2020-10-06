@@ -285,10 +285,10 @@ just a paper and pencil.
 
 ## [Networking](networking)
 
-- [Packet Sniffer](networking/)
-- [Determine Endianess](networking/)
-- [Validate IP](networking/)
-- [Hamming Code](networking/Hamming_Code)
+- [Packet Sniffer](Networks/)
+- [Determine Endianess](Networks/)
+- [Validate IP](Networks/)
+- [Hamming Code](Networks/Hamming_Code)
 
 ## [Numerical Analysis](numerical-analysis)
 
