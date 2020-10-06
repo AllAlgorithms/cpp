@@ -288,6 +288,7 @@ just a paper and pencil.
 - [Packet Sniffer](networking/)
 - [Determine Endianess](networking/)
 - [Validate IP](networking/)
+- [Hamming Code](networking/Hamming_Code/)
 
 ## [Numerical Analysis](numerical-analysis)
 
