@@ -16,3 +16,4 @@ int main() {
     std::cout << fibonacci_fast(n) << '\n';
     return 0;
 }
+// Time compelxity of this code is O(n).
