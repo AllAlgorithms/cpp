@@ -1,19 +1,19 @@
-#include <bits/stdc++.h> 
+#include <iostream>
+#include <vector>
+#include <string> 
 using namespace std; 
 
-// ways are to calculate the number of 
-// possible ways to fill the grid 
+// ways denotes the number of possible ways to fill the grid.
 int ways = 0; 
 
-// this function is used to print 
-// the resultant matrix 
+// printMatrix is used to print the resultant matrix.
 void printMatrix(vector<string>& matrix, int n) 
 { 
 	for (int i = 0; i < n; i++) 
 		cout << matrix[i] << endl; 
 } 
 
-// this function checks for the current word 
+// checkHorizontal checks for the current word 
 // if it can be placed horizontally or not 
 // x -> it represent index of row 
 // y -> it represent index of column 
@@ -31,7 +31,6 @@ vector<string> checkHorizontal(int x, int y,
 			matrix[x][y + i] = currentWord[i]; 
 		} 
 		else { 
-
 			// this shows that word cannot 
 			// be placed horizontally 
 			matrix[0][0] = '@'; 
@@ -42,7 +41,7 @@ vector<string> checkHorizontal(int x, int y,
 	return matrix; 
 } 
 
-// this function checks for the current word 
+// checkVertical checks for the current word 
 // if it can be placed vertically or not 
 // x -> it represent index of row 
 // y -> it represent index of column 
@@ -70,7 +69,7 @@ vector<string> checkVertical(int x, int y,
 	return matrix; 
 } 
 
-// this function recursively checks for every 
+// solvePuzzle recursively checks for every 
 // word that can align vertically in one loop 
 // and in another loop it checks for those words 
 // that can align horizontally words -> it 
