@@ -33,11 +33,11 @@ void make_set(int val)
 
 int find_parent(int val)
 {
-    if(val == parent[val])
-    {
-        return val;
+    while (parent[val] != val) {
+        parent[val] = parent[parent[val]];
+        val = parent[val];
     }
-    return find_parent(parent[val]);
+    return val;
 }
 
 void union_set(int x, int y)
