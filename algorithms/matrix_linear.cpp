@@ -1,10 +1,8 @@
-// represent linear equation in form of matrix
-#include<iostream.h>
-#include<conio.h>
- 
+// Represent linear equations in the form of a matrix.
+#include <iostream>
 using namespace std;
  
-int main(void)
+int main()
 {
     char var[] = { 'x', 'y', 'z', 'w' };
     cout << "Enter the number of variables in the equations: ";

@@ -16,9 +16,9 @@ A sudoku puzzle...
 ![after filled](http://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Sudoku-by-L2G-20050714_solution.svg/250px-Sudoku-by-L2G-20050714_solution.svg.png)
 ...and its solution numbers marked in red.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include <cstdio>
+#include <cctype>
+#include <cstring>
 #include <string>
 #include <vector>
 #include <iostream>

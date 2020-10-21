@@ -1,5 +1,5 @@
 // C++ program to find a list in second list 
-#include <bits/stdc++.h> 
+#include <iostream>
 using namespace std; 
 
 // A Linked List node 
@@ -72,7 +72,7 @@ void printList(Node* node)
 { 
 	while (node != NULL) 
 	{ 
-		printf("%d ", node->data); 
+		cout << (node->data) << " "; 
 		node = node->next; 
 	} 
 } 

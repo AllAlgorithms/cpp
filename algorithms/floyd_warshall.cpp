@@ -1,8 +1,11 @@
-#include <bits/stdc++.h> 
-using namespace std; 
+#include <iostream> 
+using namespace std;
+
 #define V 4  
 #define INF 99999  
-void printSolution(int dist[][V]);  
+
+void printSolution(int dist[][V]);
+
 void floydWarshall (int graph[][V])  
 {  
     int dist[V][V], i, j, k;  
@@ -21,23 +24,25 @@ void floydWarshall (int graph[][V])
         }  
     }   
     printSolution(dist);  
-}  
+}
+
 void printSolution(int dist[][V])  
 {  
-    cout<<"The following matrix shows the shortest distances"
+    cout << "The following matrix shows the shortest distances"
             " between every pair of vertices \n";  
     for (int i = 0; i < V; i++)  
     {  
         for (int j = 0; j < V; j++)  
         {  
             if (dist[i][j] == INF)  
-                cout<<"INF"<<"     ";  
+                cout << "INF" << "     ";  
             else
-                cout<<dist[i][j]<<"     ";  
+                cout << dist[i][j] << "     ";  
         }  
-        cout<<endl;  
+        cout << endl;  
     }  
 }
+
 int main()  
 {  
     
