@@ -1,9 +1,9 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <stack>
 using namespace std;
 
 int largestRectangleArea(vector<int> &hist) {
-   
-
     stack<int> s;
     int n=hist.size();
     int max_area = 0;
@@ -11,14 +11,10 @@ int largestRectangleArea(vector<int> &hist) {
     int area_with_top;
  
     int i = 0;
-    while (i < n)
-    {
+    while (i < n) {
         if (s.empty() || hist[s.top()] <= hist[i])
             s.push(i++);
- 
-
-        else
-        {
+        else {
             tp = s.top(); 
             s.pop();  
  
@@ -29,9 +25,7 @@ int largestRectangleArea(vector<int> &hist) {
         }
     }
  
-
-    while (s.empty() == false)
-    {
+    while (!s.empty()){
         tp = s.top();
         s.pop();
         area_with_top = hist[tp] * (s.empty() ? i : i - s.top() - 1);
@@ -46,44 +40,39 @@ int largestRectangleArea(vector<int> &hist) {
 
 int maximalRectangle(vector<vector<int> > &A) {
   
-  int i,j,k,l,n=A.size(),m=A[0].size(),maxi=0;
-  vector<int> vec(m,0);
+    int i, j, k, l, n=A.size(), m=A[0].size(), maxi=0;
+    vector<int> vec(m, 0);
      
-  for(i=0;i<n;i++)
-  {
-      for(j=0;j<m;j++)
-      {
-         if(A[i][j]==0)
-         vec[j]=0;
-         else
-         vec[j]+=1;
-      }
-      maxi=max(maxi,largestRectangleArea(vec));
-  }
-  return maxi;
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<m; j++)
+        {
+            if(A[i][j]==0)
+                vec[j]=0;
+            else
+                vec[j]++;
+        }
+        maxi = max(maxi, largestRectangleArea(vec));
+    }
+    return maxi;
 }
 
-int main(){
-	
-	int n,i,j,m,x;
+int main() {	
+	int n, i, j, m, x;
 	
 	vector<vector<int> > vec;
 	vector<int> arr;
-	cin>>n>>m;
+	cin >> n >> m;
 	
-	for(i=0;i<n;i++){
+	for(i=0; i<n; i++) {
 		arr.clear();
-		for(j=0;j<m;j++)
-		{
+		for(j=0; j<m; j++){
 			cin>>x;
 			arr.push_back(x);
 		}
 		vec.push_back(arr);
 	}
 	
-	cout<<maximalRectangle(vec);
-	
-	
-	
+	cout << maximalRectangle(vec);
 }
 

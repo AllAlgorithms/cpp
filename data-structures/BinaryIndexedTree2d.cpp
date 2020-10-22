@@ -1,7 +1,5 @@
 // Binary Indexed Tree of sum in 2d array
 // AbraaoCF - UFCG
-#include <bits/stdc++.h>
-using namespace std;
 #define maxx 1100
 int bit[maxx][maxx];
 void update(int idx, int idy, int value)

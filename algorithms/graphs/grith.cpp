@@ -1,53 +1,49 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <utility>
 
 using namespace std;
 
+const long long MX = 2e5 + 3;
+vector<long long> adj[MX];
+long long mark[MX], dis[MX], ans;
 
-typedef vector<int> vi;
-typedef pair<int,int> pi;
-
-#define int long long
-#define F first
-#define S second
-#define PB push_back
-#define MP make_pair
-#define REP(i, a, b) for(int i =a;i < b; i++)
-
-const int MX = 2e5 + 3;
-vi adj[MX];
-int mark[MX],dis[MX], ans;
-
-void DFS(int u, int par, int k);
+void DFS(long long u, long long par, long long k);
 
 int32_t main()
 {	
-	ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-	int n, m;
-	int u, v;
-	cin>>n>>m;
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+	
+	long long n, m;
+	long long u, v;
+	cin >> n >> m;
 	ans = m + 1;
-	REP(i, 0, m)
+	for(long long i=0; i<m; i++)
 	{
-		cin>>u>>v;
-		adj[v].PB(u);
-		adj[u].PB(v);
+		cin >> u >> v;
+		adj[v].push_back(u);
+		adj[u].push_back(v);
 	}
-	REP(i, 1, n+1)
+	for(int i=1; i<n+1; i++)
 	{
 		dis[i]=0;
 		DFS(i, -1, mark[i]);
 	}
-	if(ans == m+1) cout<<-1;
-	else cout<<ans;
+	if(ans == m+1) 
+		cout<<-1;
+	else 
+		cout<<ans;
 	return 0;
 }
 
-void DFS(int u, int par, int k)
+void DFS(long long u, long long par, long long k)
 {
-	mark[u] ++;
+	mark[u]++;
 	if(u == par)
 	{
-		ans = min(ans, (int)1);
+		ans = min(ans, (long long)1);
 	}
 	for(auto v: adj[u])
 	{

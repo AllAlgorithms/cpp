@@ -1,7 +1,11 @@
 // C++ program for Kruskal's algorithm to find Minimum 
 // Spanning Tree of a given connected, undirected and 
 // weighted graph 
-#include<bits/stdc++.h> 
+#include <iostream>
+#include <vector>
+#include <utility>
+#include <algorithm>
+
 using namespace std; 
 
 // Creating shortcut for an integer pair 
@@ -11,7 +15,7 @@ using namespace std;
 struct Graph 
 { 
 	int V, E; 
-	vector< pair<int, pair<int, int>> > edges;
+	vector<pair<int, pair<int, int> > > edges;
 	Graph(int V, int E) 
 	{ 
 		this->V = V; 
@@ -38,12 +42,13 @@ struct DisjointSets
 		this->n = n; 
 		parent = new int[n+1]; 
 		rnk = new int[n+1]; 
-		for (int i = 0; i <= n; i++) 
+		for(int i = 0; i <= n; i++) 
 		{ 
 			rnk[i] = 0; 
 			parent[i] = i; 
 		} 
 	} 
+
 	int find(int u) 
 	{ 
 		if (u != parent[u]) 
@@ -54,7 +59,8 @@ struct DisjointSets
 	// Union by rank 
 	void merge(int x, int y) 
 	{ 
-		x = find(x), y = find(y); 
+		x = find(x);
+		y = find(y); 
 
 		/* Make tree with smaller height 
 		a subtree of the other tree */
@@ -68,7 +74,7 @@ struct DisjointSets
 	} 
 }; 
 
-/* Functions returns weight of the MST*/
+/* Functions returns the weight of the MST */
 
 int Graph::kruskalMST() 
 { 
@@ -81,7 +87,7 @@ int Graph::kruskalMST()
 	DisjointSets ds(V); 
 
 	// Iterate through all sorted edges 
-	vector< pair<int, pair<int, int>> >::iterator it; 
+	vector<pair<int, pair<int, int> > >::iterator it; 
 	for (it=edges.begin(); it!=edges.end(); it++) 
 	{ 
 		int u = it->second.first; 

@@ -9,7 +9,7 @@
 // Contributed by: Unknown
 // Github: Unknown
 //
-#include<bits/stdc++.h>
+#include <iostream>
 #define n 3
 using namespace std;
 

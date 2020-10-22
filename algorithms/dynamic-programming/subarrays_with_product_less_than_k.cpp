@@ -1,6 +1,7 @@
 // CPP program to find number of subarrays having 
 // product less than k. 
-#include <bits/stdc++.h> 
+#include <iostream> 
+#include <vector>
 using namespace std; 
 
 // Function to count numbers of such subsequences 

@@ -11,7 +11,7 @@
 // Github: @abranhe
 //
 
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 // Utility function to find the minimum of three numbers

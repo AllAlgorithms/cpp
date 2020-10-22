@@ -4,12 +4,11 @@ N numbers are present twice and one number is present only once in the array.
 You need to find and return that number which is unique in the array.
 */
 
-#include<iostream>
+#include <iostream>
 #include <algorithm>
-#include "solution.h"
 using namespace std;
 
-int FindUnique(int arr[], int size){
+int FindUnique(int arr[], int size) {
     int xor1 = 0;
     for(int i = 0; i < size; i++)
         xor1 ^= arr[i];
@@ -17,16 +16,15 @@ int FindUnique(int arr[], int size){
 }
 
 int main() {
-
 	int size;
 
-	cin>>size;
-	int *input=new int[1+size];	
-	
-	for(int i=0;i<size;i++)
-		cin>>input[i];
-	
-	cout<<FindUnique(input,size)<<endl;
-		
+	cin >> size;
+	int* input = new int[1+size];	
+
+	for(int i=0; i<size; i++)
+		cin >> input[i];
+
+	cout << FindUnique(input, size)<<endl;
+
 	return 0;
 }

@@ -1,7 +1,7 @@
 //
 // A Dynamic Programming based solution for 0-1 Knapsack problem
 //
-// The All ▲lgorithms library for python
+// The All ▲lgorithms library for C++
 //
 // https://allalgorithms.com/dynamic-programming/
 // https://github.com/allalgorithms/cpp
@@ -9,10 +9,8 @@
 // Contributed by: Unknown
 // Github: Unknown
 //
-#include<bits/stdc++.h>
-
-// A utility function that returns maximum of two integers
-int max(int a, int b) { return (a > b)? a : b; }
+#include <iostream>
+using namespace std;
 
 // Returns the maximum value that can be put in a knapsack of capacity W
 int knapSack(int W, int wt[], int val[], int n)

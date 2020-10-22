@@ -1,5 +1,5 @@
-#include <bits/stdc++.h>
-#define blue ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -24,7 +24,11 @@ int largestSubset(int a[], int n)
 
 int main()
 {
-    blue;
+	// Fast IO.
+    ios_base::sync_with_stdio(false);
+	cin.tie(NULL); 
+	cout.tie(NULL);
+	
 	int a[] = { 21, 4, 6, 13, 11, 2 };
 	int n = sizeof(a) / sizeof(a[0]);
 	cout << largestSubset(a, n) << endl;

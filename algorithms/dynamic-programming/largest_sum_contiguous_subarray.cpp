@@ -2,8 +2,7 @@
 Author : AMEY GONDHALEKAR
 */
 
-#include<bits/stdc++.h>
-#define blue ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#include<iostream>
 using namespace std;
 
 int maxSubArraySum(int arr[], int size)
@@ -22,7 +21,11 @@ int maxSubArraySum(int arr[], int size)
 
 int main()
 {
-    blue;
+    // Fast IO
+    ios_base::sync_with_stdio(0); 
+    cin.tie(0); 
+    cout.tie(0);
+    
     int arr[] = {6,-2, -1, 5, -1, -4, 1, 6, -2};
     int n = sizeof(arr)/sizeof(arr[0]);
     int sum = maxSubArraySum(arr, n);

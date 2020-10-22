@@ -1,19 +1,20 @@
-#include "bits/stdc++.h" 
+#include <iostream>
+#include <vector>
 using namespace std; 
 
 long long dp[20][180][2]; 
 
-long long getDigits(long long x, vector <int> &digit) 
+void getDigits(long long x, vector<int> &digit) 
 { 
 	while (x) 
 	{ 
 		digit.push_back(x%10); 
 		x /= 10; 
-	} 
+	}
 } 
 
 long long digitSum(int idx, int sum, int tight, 
-						vector <int> &digit) 
+						vector<int> &digit) 
 { 
 	if (idx == -1) 
 	return sum; 

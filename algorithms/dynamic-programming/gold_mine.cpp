@@ -1,5 +1,5 @@
 // C++ program to solve Gold Mine problem 
-#include<bits/stdc++.h> 
+#include <iostream> 
 using namespace std; 
   
 const int MAX = 100; 

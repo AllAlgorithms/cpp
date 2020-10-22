@@ -2,8 +2,8 @@
 // The following is C++ implementation of Kruskal's algorithm
 //  on a graph.  
 
-// Kruskal's Algorithm is used to find minimum spanning tree
-// of a graph .
+// Kruskal's Algorithm is used to find the minimum spanning tree
+// of a graph.
 // Here 'Disjoint Sets' method is used for cycle detection.
 // Disjoint sets are sets whose intersection is empty set 
 // if they don't have any common element 
@@ -18,7 +18,9 @@
 //
 
 
-#include<bits/stdc++.h>
+#include <iostream>
+#include <utility>
+#include <algorithm>
 using namespace std;
 
 const int MAX = 1e4 + 5;
@@ -38,11 +40,11 @@ int root(int x)
 int main()
 {
     int nodes, edges, x, y, weight;
-    int cost, minimumCost=0 ;
-    pair <int, pair<int, int> > Graph[MAX];
+    int cost, minimumCost=0;
+    pair<int, pair<int, int> > graph[MAX];
 
     // initially all elements are in different sets
-    for(int i = 0;i < MAX;++i)
+    for(int i = 0; i<MAX; ++i)
         id[i] = i;
 
 
@@ -51,19 +53,19 @@ int main()
     for(int i = 0;i < edges;++i)
     {
         cin >> x >> y >> weight;
-        Graph[i] = make_pair(weight, make_pair(x, y));
+        graph[i] = make_pair(weight, make_pair(x, y));
     }
 
     // Sort the edges in the ascending order of weights
-    sort(Graph, Graph + edges);
+    sort(graph, graph + edges);
 
     // find weight of minimum spanning tree
     for(int i = 0;i < edges;++i)
     {
         // Selecting edges one by one in increasing order from the beginning
-        x = Graph[i].second.first;
-        y = Graph[i].second.second;
-        cost = Graph[i].first;
+        x = graph[i].second.first;
+        y = graph[i].second.second;
+        cost = graph[i].first;
         // Check if the selected edge is creating a cycle or not
         if(root(x) != root(y))
         {

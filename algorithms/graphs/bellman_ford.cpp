@@ -9,9 +9,9 @@
 // Contributed by: Nikunj Taneja
 // Github: @underscoreorcus
 //
-#include <bits/stdc++.h>
+#include <iostream>
 
-struct Edge
+struct Edge 
 {
     int src, dest, weight;
 };
@@ -21,17 +21,14 @@ struct Graph
     // V-> Number of vertices, E-> Number of edges
     int V, E;
     // graph is represented as an array of edges.
-    struct Edge* edge;
-};
+    Edge* edge;
 
-struct Graph* createGraph(int V, int E)
-{
-    struct Graph* graph = new Graph;
-    graph->V = V;
-    graph->E = E;
-    graph->edge = new Edge[E];
-    return graph;
-}
+    Graph(int V, int E) {
+        this->V = V;
+        this->E = E;
+        this->edge = new Edge[E];
+    }
+};
 
 void printArr(int dist[], int n)
 {
@@ -40,7 +37,7 @@ void printArr(int dist[], int n)
         printf("%d \t\t %d\n", i, dist[i]);
 }
 
-void BellmanFord(struct Graph* graph, int src)
+void BellmanFord(Graph* graph, int src)
 {
     int V = graph->V;
     int E = graph->E;
@@ -49,7 +46,7 @@ void BellmanFord(struct Graph* graph, int src)
     // Step 1: Initialize distances from src to all other vertices
     // as INFINITE
     for (int i = 0; i < V; i++)
-        dist[i]   = INT_MAX;
+        dist[i]  = INT_MAX;
     dist[src] = 0;
 
     // Step 2: Relax all edges |V| - 1 times. A simple shortest
@@ -80,14 +77,15 @@ void BellmanFord(struct Graph* graph, int src)
             printf("Graph contains negative weight cycle");
     }
     printArr(dist, V);
-    return;
 }
+
 int main()
 {
     /* Sample graph */
     int V = 5;
     int E = 8;
-    struct Graph* graph = createGraph(V, E);
+    Graph* graph = new Graph(V, E);
+    
     graph->edge[0].src = 0;
     graph->edge[0].dest = 1;
     graph->edge[0].weight = -1;
