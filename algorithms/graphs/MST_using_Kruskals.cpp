@@ -1,16 +1,18 @@
-#include<iostream>
-#include<conio.h>
+#include <iostream>
 using namespace std;
+
 int flag = 0, v[3];
 struct node_info
 {
     int no;
-}*q = NULL, *r = NULL;
+} *q = NULL, *r = NULL;
+
 struct node
 {
     node_info *pt;
     node *next;
-}*top = NULL, *p = NULL, *np = NULL;
+} *top = NULL, *p = NULL, *np = NULL;
+
 void push(node_info *ptr)
 {
     np = new node;
@@ -26,11 +28,12 @@ void push(node_info *ptr)
         top = np;
     }
 }
- node_info *pop()
+
+node_info *pop()
 {
     if (top == NULL)
     {
-        cout<<"underflow\n";
+        cout << "underflow\n";
     }
     else
     {
@@ -41,7 +44,8 @@ void push(node_info *ptr)
     }
     return 0;
 }
-int back_edges(int *v,int am[][3],int i,int k)
+
+int back_edges(int *v, int am[][3], int i, int k)
 {
     q = new node_info;
     q->no = i;
@@ -63,8 +67,9 @@ int back_edges(int *v,int am[][3],int i,int k)
         }
     }
     r = pop();
-    return(flag);
+    return flag;
 }
+
 void init()
 {
     for (int i = 0; i < 3; i++)
@@ -74,6 +79,7 @@ void init()
         pop();
     }
 }
+
 void kruskals(int am[][3], int wm[][3])
 {
     int ve = 1, min, temp, temp1;
@@ -106,11 +112,12 @@ void kruskals(int am[][3], int wm[][3])
         }
         else
         {
-            cout<<"edge created between "<<temp<<" th node and "<<temp1<<" th node"<<endl;
+            cout << "edge created between " << temp << " th node and " << temp1 << " th node" << endl;
             ve++;
         }
     }
 }
+
 int main()
 {
     int am[3][3], wm[3][3];
@@ -131,6 +138,6 @@ int main()
             cin>>wm[i][j];
         }
     }
-    kruskals(am,wm);
+    kruskals(am, wm);
     return 0;
 }
