@@ -1,7 +1,7 @@
 //
 // Dynamic Programming C/C++ implementation of Longest Path problem
 //
-// The All ▲lgorithms library for python
+// The All ▲lgorithms library for C++
 //
 // https://allalgorithms.com/dynamic-programming/
 // https://github.com/allalgorithms/cpp

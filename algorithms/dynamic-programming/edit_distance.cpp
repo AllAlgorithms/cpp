@@ -2,7 +2,7 @@
 // A Dynamic Programming based C++ program to find minimum
 // number operations to convert str1 to str2
 //
-// The All ▲lgorithms library for python
+// The All ▲lgorithms library for C++
 //
 // https://allalgorithms.com/dynamic-programming/
 // https://github.com/allalgorithms/cpp

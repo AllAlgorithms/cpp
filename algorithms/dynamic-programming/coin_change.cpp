@@ -2,7 +2,7 @@
 //  A Stack is an abstract data type that serves as a collection
 // of elements, with two principal operations are push & pop
 //
-// The All ▲lgorithms library for python
+// The All ▲lgorithms library for C++
 //
 // https://allalgorithms.com/dynamic-programming/
 // https://github.com/allalgorithms/cpp

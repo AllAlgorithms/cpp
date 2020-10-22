@@ -2,7 +2,7 @@
 // A Dynamic Programming based C++ program to count number of ways
 // to cover a distance with 1, 2 and 3 steps
 //
-// The All ▲lgorithms library for python
+// The All ▲lgorithms library for C++
 //
 // https://allalgorithms.com/dynamic-programming/
 // https://github.com/allalgorithms/cpp
