@@ -1,5 +1,5 @@
 // C++ program for insertion sort 
-#include <bits/stdc++.h> 
+#include <iostream> 
 using namespace std; 
 
 /* Function to sort an array using insertion sort*/

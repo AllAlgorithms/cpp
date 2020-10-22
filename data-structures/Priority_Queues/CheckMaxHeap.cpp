@@ -1,18 +1,13 @@
 /*
-
 Problem:
 Given an array of integers, check whether it represents max-heap or not.
 Return true or false.
-
-
 */
 
-
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-bool checkMaxHeap(int arr[], int n){
-
+bool checkMaxHeap(int arr[], int n) {
     int loopSize = ((n-1)-1)/2;
 	int j = 0;
 	while(j <= loopSize) {
@@ -36,27 +31,25 @@ bool checkMaxHeap(int arr[], int n){
 				return false;
 			}
 		}
-		j++;	
+		j++;
 	}
 	return true;
 }
 
 int main() {
     int n;
-    cin>>n;
-    int *arr = new int[n];
-    for(int i=0; i<n; i++){
+    cin >> n;
+    int arr[n];
+    for(int i=0; i<n; i++) {
         cin >> arr[i];
     }
     bool ans = checkMaxHeap(arr, n);
-    if(ans){
+    if(ans) {
         cout << "true" << endl;
     }
-    else{
+    else {
         cout << "false" << endl;
     }
-    
-    delete [] arr;
 }
 
 

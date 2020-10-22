@@ -1,11 +1,13 @@
 // Given a value V and the list of available denomination of money,
 // find minimum number of coins and/or notes needed to make the change.
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 // All denominations of Indian Currency
-int deno[] = { 1, 2, 5, 10, 20,
+int deno[] = {1, 2, 5, 10, 20,
 			50, 100, 500, 1000 };
 int n = sizeof(deno) / sizeof(deno[0]);
 
@@ -15,7 +17,6 @@ vector<int> calculate(int V)
 	vector<int> ans;
 
 	for (int i = n - 1; i >= 0; i--) {
-
 		while (V >= deno[i]) {
 			V -= deno[i];
 			ans.push_back(deno[i]);
@@ -29,13 +30,13 @@ vector<int> calculate(int V)
 int main()
 {
 	int n;
-	cout<<"Enter the monitory value: ";
-	cin>>n;
+	cout << "Enter the monitory value: ";
+	cin >> n;
 	cout << "Following is minimal number of change for " << n
 		<< ": ";
     vector<int> ans = calculate(n);
 	for(auto i: ans)
-        cout<<i<<" ";
-	cout<<"\nMinimum Denominations required: "<<ans.size();
+        cout << i << " ";
+	cout << "\nMinimum Denominations required: " << ans.size();
 	return 0;
 }

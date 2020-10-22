@@ -1,61 +1,60 @@
 #include "AVL.h"
 using namespace std;
 
-//Calcule altura de um nó
+//Calculate the height of a node.
 int height_node(struct _Node_* node){
     if(node == NULL)
         return -1;
     else
         return node->height;
 }
-//Calcule o fator de balanceamento de um nó
+
+//Calculate the balancing factor of a node.
 int fatorBalanceamento_node(struct _Node_* node){
     int valor = (height_node(node->right))-(height_node(node->left));
     return valor;
 }
-//Calcula o maior valor
-int maior(int x, int y){
-    if(x > y)
-        return x;
-    else
-        return y;
-}
-//Rotação a esquerda
-AVLnode* RotationLL(AVLnode* root){
-    AVLnode*node;
+
+//Rotate left
+AVLnode* RotationLL(AVLnode* root) {
+    AVLnode* node;
     node = root->left;
     root->left = node->right;
-    root->height = maior(height_node(root->left),height_node(root->right)) + 1;
-    node->height = maior(height_node(node->left),height_node(root)) + 1;
+    root->height = std::max(height_node(root->left),height_node(root->right)) + 1;
+    node->height = std::max(height_node(node->left),height_node(root)) + 1;
     root = node;
     return root;
 }
-//Rotação a direita
-AVLnode* RotationRR(AVLnode* root){
+
+//Rotate right
+AVLnode* RotationRR(AVLnode* root) {
     AVLnode* node;
     node = root->right;
     root->right = node->left;
-    root->height = maior(height_node(root->left),height_node(root->right)) + 1;
-    node->height = maior(height_node(node->right),height_node(root)) + 1;
+    root->height = std::max(height_node(root->left), height_node(root->right)) + 1;
+    node->height = std::max(height_node(node->right), height_node(root)) + 1;
     root = node;
     return root;
 }
-//Rotação dupla a esquerda
+
+//Rotate left twice
 AVLnode* RotationLR(AVLnode* root){
     root->left = RotationRR(root->left);
     root = RotationLL(root);
     return root;
 }
-//Rotação dupla a direita
+
+//Rotate right twice
 AVLnode* RotationRL(AVLnode* root){
     root->right = RotationLL(root->right);
     root = RotationRR(root);
     return root;
 }
+
 //Insert AVLtree
-AVLnode* insert_AVLnode(AVLnode* root,Data* data){
-    //árvore vazia ou nó folha
-    if(root == NULL){
+AVLnode* Insert_AVLnode(AVLnode* root,Data* data){
+    //If tree is empty or leaf.
+    if(root == NULL) {
         AVLnode* novo;
         novo = new AVLnode[1];
         if(novo == NULL)
@@ -69,11 +68,11 @@ AVLnode* insert_AVLnode(AVLnode* root,Data* data){
 
     AVLnode* current = root;
 
-    /*Balançeamento*/
-    if(data->key < current->data->key){
+    /*Balancing*/
+    if(data->key < current->data->key) {
         current->left = insert_AVLnode(current->left, data);
-        if(current->left != NULL){
-            if(fatorBalanceamento_node(current) <= -2){
+        if(current->left != NULL) {
+            if(fatorBalanceamento_node(current) <= -2) {
                 if(data->key < current->left->data->key)
                     root = RotationLL(root);
                 else
@@ -81,11 +80,11 @@ AVLnode* insert_AVLnode(AVLnode* root,Data* data){
             }
         }
         return root;
-    }else{
-        if(data->key > current->data->key){
+    } else {
+        if(data->key > current->data->key) {
             current->right = insert_AVLnode(current->right, data);
-            if(current->right != NULL){
-                if(fatorBalanceamento_node(current) >= 2){
+            if(current->right != NULL) {
+                if(fatorBalanceamento_node(current) >= 2) {
                     if(data->key > current->right->data->key)
                         root = RotationRR(root);
                     else
@@ -97,22 +96,23 @@ AVLnode* insert_AVLnode(AVLnode* root,Data* data){
     }
     return NULL;
 }
+
 //Query
-void Query(AVLnode* root,Data** aux,string str,int* passos){
+void Query(AVLnode* root, Data** aux, string str, int* passos) {
     int value = valorString(str);
-    if(root != NULL){
-        if(root->data->key == value){
+    if(root != NULL) {
+        if(root->data->key == value) {
             *aux = root->data;
-        }else if(value > root->data->key){
+        } else if(value > root->data->key) {
             Query(root->right, &*aux, str, &*passos);
-        }else{
+        } else {
             Query(root->left, &*aux, str, &*passos);
         }
     }
     *passos = *passos + 1;
 }
 
-//Destruir
+//Destructor
 void Destroy(AVLnode *t){
     if(t != NULL){
         Destroy(t->left);

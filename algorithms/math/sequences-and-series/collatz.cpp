@@ -1,15 +1,15 @@
 //
-// Collatz sequenge algorithm implementation in C++
+// Collatz sequence algorithm implementation in C++
 //
 // The All ▲lgorithms Project
 //
-// https://allalgorithms.com/cpp/math/collatz-sequenge
+// https://allalgorithms.com/cpp/math/collatz-sequence
 // https://github.com/allalgorithms/cpp
 //
 // Contributed by: Pablo Trinidad
 // Github: @pablotrinidad
 //
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 void collatz(int n) {
@@ -23,6 +23,7 @@ void collatz(int n) {
     }
     cout << n << endl;
 }
+
 int main() {
     int n;
     cout << "Enter an integer n to compute the Collatz sequence: ";

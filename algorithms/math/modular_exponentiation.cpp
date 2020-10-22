@@ -11,7 +11,7 @@
 // Contributed by: Rituparno Biswas
 // Github: @roopbiswas
 //
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 typedef long long int ll;

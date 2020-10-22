@@ -1,28 +1,28 @@
 /*
-Pair is a container class in CPP defined in <utility> header file. It consists of two elements.
+Pair is a container class in C++ defined in <utility> header file. It consists of two elements.
 
-You can access the first element as 'first' and second element as 'second'. They both can be of any data type. (This class is made using templates)
+You can access the first element as 'first' and second element as 'second'. They both can be of any data type. 
+(This class is implemented using templates.)
 
 We can use the pair class where we need to store two properties like when finding diameter of a binary tree.
 
-This is the inbuilt version, we can create our own version too.
-
+This is the in-built version, we can create our own version too.
 */
-#include<bits/stdc++.h>
+
+#include <iostream>
+#include <utility>
 using namespace std;
 
 int main() {
-	
-	pair <int, char> p ; 
+	pair<int, char> p; 
   
     p.first = 100; 
-    p.second = 'G' ; 
+    p.second = 'G'; 
   
-    cout << p.first << " " ; 
-    cout << p.second << endl ; 
+    cout << p.first << " ";
+    cout << p.second << endl;
   
-    return 0; 
-	
+    return 0;
 }
 
 

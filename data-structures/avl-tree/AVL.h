@@ -9,8 +9,8 @@ typedef struct _Node_{
     struct _Node_ *right;
 } AVLnode;
 
-AVLnode* insert_AVLnode(AVLnode* root,Data* data);
-void Query(AVLnode* root,Data** aux,string str, int* passos);
+AVLnode* Insert_AVLnode(AVLnode* root, Data* data);
+void Query(AVLnode* root, Data** aux, string str, int* passos);
 void Destroy(AVLnode *t);
 
 #endif

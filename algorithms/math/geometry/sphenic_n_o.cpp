@@ -1,7 +1,9 @@
-//CODE ADAPTED FROM OTHER WEBSITE.
+// CODE ADAPTED FROM OTHER WEBSITE.
 // C++ program to check whether a number is a 
 // Sphenic number or not 
-#include<bits/stdc++.h> 
+#include <iostream>
+#include <vector>
+#include <set>
 using namespace std; 
   
 const int MAX = 1000; 

@@ -1,21 +1,26 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <queue>
+
 using namespace std;
+
 vector<int> adj[10001];
 priority_queue<int,vector<int>,greater<int> >q;
 queue<int>a;
+
 bool visited[10001];
 int indegree[10001];
 int main()
 {
-	int n,m,u,v;
-	scanf("%d%d",&n,&m);
+	int n, m, u, v;
+	scanf("%d%d", &n, &m);
 	while(m--)
 	{
-	    scanf("%d%d",&u,&v);
+	    scanf("%d%d", &u, &v);
 	    adj[u].push_back(v);
 	    indegree[v]++;
 	}
-	for(int i=1;i<=n;i++)
+	for(int i=1; i<=n; i++)
 	    if(!indegree[i])
 	        q.push(i);
 	int k=0;
@@ -24,7 +29,7 @@ int main()
 	    int u=q.top();
 	    q.pop();
 	    a.push(u);
-	    for(auto it:adj[u])
+	    for(auto it: adj[u])
 	    {
 	        indegree[it]--;
 	        if(!indegree[it])
@@ -38,7 +43,7 @@ int main()
 	{
 	    while(!a.empty())
 	    {
-	        printf("%d ",a.front());
+	        printf("%d ", a.front());
 	        a.pop();
 	    }
 	}

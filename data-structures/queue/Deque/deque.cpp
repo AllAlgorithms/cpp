@@ -1,26 +1,27 @@
-#include<stdio.h>
-#include<process.h>
+#include <cstdio>
+#include <iostream>
 #define MAX 30
+using namespace std;
 
-typedef struct dequeue
+struct Dequeue
 {
 	int data[MAX];
 	int rear,front;
-}dequeue;
+};
 
-void initialize(dequeue *p);
-int empty(dequeue *p);
-int full(dequeue *p);
-void enqueueR(dequeue *p,int x);
-void enqueueF(dequeue *p,int x);
-int dequeueF(dequeue *p);
-int dequeueR(dequeue *p);
-void print(dequeue *p);
+void initialize(Dequeue *p);
+int empty(Dequeue *p);
+int full(Dequeue *p);
+void enqueueR(Dequeue *p, int x);
+void enqueueF(Dequeue *p, int x);
+int dequeueF(Dequeue *p);
+int dequeueR(Dequeue *p);
+void print(Dequeue *p);
 
-void main()
+int main()
 {
-	int i,x,op,n;
-	dequeue q;
+	int i, x, op, n;
+	Dequeue q;
 
 	initialize(&q);
 
@@ -28,29 +29,29 @@ void main()
 	{
 		printf("\n1.Create\n2.Insert(rear)\n3.Insert(front)\n4.Delete(rear)\n5.Delete(front)");
 		printf("\n6.Print\n7.Exit\n\nEnter your choice:");
-		scanf("%d",&op);
+		scanf("%d", &op);
 
 		switch(op)
 		{
 			case 1: printf("\nEnter number of elements:");
-					scanf("%d",&n);
+					scanf("%d", &n);
 					initialize(&q);
 					printf("\nEnter the data:");
 
-					for(i=0;i<n;i++)
+					for(i=0; i<n; i++)
 					{
-						scanf("%d",&x);
+						scanf("%d", &x);
 						if(full(&q))
 						{
 							printf("\nQueue is full!!");
 							exit(0);
 						}
-						enqueueR(&q,x);
+						enqueueR(&q, x);
 					}
 					break;
 
 			case 2: printf("\nEnter element to be inserted:");
-					scanf("%d",&x);
+					scanf("%d", &x);
 
 					if(full(&q))
 					{
@@ -58,11 +59,11 @@ void main()
 						exit(0);
 					}
 
-					enqueueR(&q,x);
+					enqueueR(&q, x);
 					break;
 
 			case 3: printf("\nEnter the element to be inserted:");
-					scanf("%d",&x);
+					scanf("%d", &x);
 
 					if(full(&q))
 					{
@@ -70,7 +71,7 @@ void main()
 						exit(0);
 					}
 
-					enqueueF(&q,x);
+					enqueueF(&q, x);
 					break;
 
 			case 4: if(empty(&q))
@@ -98,16 +99,16 @@ void main()
 
 			default: break;
 		}
-	}while(op!=7);
+	} while(op!=7);
 }
 
-void initialize(dequeue *P)
+void initialize(Dequeue* P)
 {
 	P->rear=-1;
 	P->front=-1;
 }
 
-int empty(dequeue *P)
+int empty(Dequeue* P)
 {
 	if(P->rear==-1)
 		return(1);
@@ -115,15 +116,15 @@ int empty(dequeue *P)
 	return(0);
 }
 
-int full(dequeue *P)
+int full(Dequeue* P)
 {
-	if((P->rear+1)%MAX==P->front)
+	if((P->rear+1)%MAX == P->front)
 		return(1);
 
 	return(0);
 }
 
-void enqueueR(dequeue *P,int x)
+void enqueueR(Dequeue* P,int x)
 {
 	if(empty(P))
 	{
@@ -138,7 +139,7 @@ void enqueueR(dequeue *P,int x)
 	}
 }
 
-void enqueueF(dequeue *P,int x)
+void enqueueF(Dequeue* P,int x)
 {
 	if(empty(P))
 	{
@@ -153,7 +154,7 @@ void enqueueF(dequeue *P,int x)
 	}
 }
 
-int dequeueF(dequeue *P)
+int dequeueF(Dequeue* P)
 {
 	int x;
 
@@ -167,7 +168,7 @@ int dequeueF(dequeue *P)
 	return(x);
 }
 
-int dequeueR(dequeue *P)
+int dequeueR(Dequeue* P)
 {
 	int x;
 
@@ -181,11 +182,11 @@ int dequeueR(dequeue *P)
 	return(x);
 }
 
-void print(dequeue *P)
+void print(Dequeue* P)
 {
 	if(empty(P))
 	{
-		printf("\nQueue is empty!!");
+		printf("\nQueue is empty.");
 		exit(0);
 	}
 

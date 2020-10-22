@@ -1,6 +1,7 @@
 
 // C++ program to implement Shortest Job first 
-#include<bits/stdc++.h> 
+#include <iostream>
+#include <algorithm>
 using namespace std; 
   
 struct Process 
@@ -12,9 +13,9 @@ struct Process
 // This function is used for sorting all 
 // processes in increasing order of burst 
 // time 
-bool comparison(Process a, Process b) 
+bool comparison(const Process& a, const Process& b) 
 { 
-     return (a.bt < b.bt); 
+    return (a.bt < b.bt); 
 } 
   
 // Function to find the waiting time for all 
@@ -40,7 +41,7 @@ void findTurnAroundTime(Process proc[], int n,
 } 
   
 //Function to calculate average time 
-void findavgTime(Process proc[], int n) 
+void findAvgTime(Process proc[], int n) 
 { 
     int wt[n], tat[n], total_wt = 0, total_tat = 0; 
   
@@ -75,7 +76,7 @@ void findavgTime(Process proc[], int n)
 int main() 
 { 
     Process proc[] = {{1, 6}, {2, 8}, {3, 7}, {4, 3}}; 
-    int n = sizeof proc / sizeof proc[0]; 
+    int n = sizeof(proc) / sizeof(proc[0]);
   
     // Sorting processes by burst time. 
     sort(proc, proc + n, comparison); 
@@ -84,6 +85,6 @@ int main()
     for (int i = 0 ; i < n; i++) 
         cout << proc[i].pid <<" "; 
   
-    findavgTime(proc, n); 
+    findAvgTime(proc, n); 
     return 0; 
 } 

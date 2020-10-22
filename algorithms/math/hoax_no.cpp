@@ -1,8 +1,16 @@
-
 // CPP code to check if a number is a hoax 
 // number or not. 
-#include <bits/stdc++.h> 
+
+// A Hoax Number is defined as a composite number, 
+// whose sum of digits is equal to the sum of digits 
+// of its distinct prime factors.
+
+#include <iostream>
+#include <vector>
+#include <cmath>
+
 using namespace std; 
+
 // Function to find distinct prime factors 
 // of given number n 
 vector<int> primeFactors(int n) 
@@ -58,18 +66,18 @@ bool isHoax(int n)
         // Finding sum of digits in current 
         // prime factor pf[i].  
         int pf_sum; 
-        for (pf_sum = 0; pf[i] > 0;  
-             pf_sum += pf[i] % 10, pf[i] /= 10) 
-            ; 
+        for (pf_sum = 0; pf[i] > 0; pf[i] /= 10) {
+            pf_sum += pf[i] % 10;
+        }
   
         all_pf_sum += pf_sum; 
     } 
   
     // Finding sum of digits of number n 
     int sum_n; 
-    for (sum_n = 0; n > 0; sum_n += n % 10, 
-                                  n /= 10) 
-        ; 
+    for (sum_n = 0; n > 0; n /= 10) {
+        sum_n += n % 10;
+    }
   
     // Comparing the two calculated sums 
     return sum_n == all_pf_sum; 

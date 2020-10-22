@@ -17,14 +17,11 @@
 
 using namespace std;
 
-
-
-
 void getMacAddress(char *uc_Mac)
 {
-   	 int fd;
+   	int fd;
 	
-	struct ifreq ifr;
+	ifreq ifr;
 	const char* iface = "enp2s0";
 	char* mac;
 	
@@ -50,6 +47,6 @@ int main()
 
 	getMacAddress(mac);
 
-	cout<<endl<<"Mac Address : "<<mac<<endl;
+	cout << endl << "Mac Address : " << mac << endl;
 	return 0;
 }

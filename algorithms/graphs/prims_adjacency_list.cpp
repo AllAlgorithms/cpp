@@ -24,30 +24,31 @@
 // Github: @pritamnegi
 //
 
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <utility>
+#include <queue>
 #define INF INT_MAX
 
 using namespace std;
 
-int main(){
-
+int main() {
     cout << "Enter number of vertices of the graph" << endl;
     int v;
     cin >> v;
 
     vector<pair<int, int> > adj[v];
-    int i, j; //Iterators
-
+    
     cout << "Enter number of edges of the graph" << endl;
     int e;
-    cin>>e;
+    cin >> e;
 
     cout << "Enter the vertices and their edge weights in the following format :" << endl;
     cout << "Vertex1 Vertex2 Weight" << endl;
     cout << "PS : First vertex should be 0." << endl;
 
-    for (i = 0; i < e; i ++){
-        int v1,v2,w;
+    for (int i = 0; i < e; i ++){
+        int v1, v2, w;
         cin >> v1 >> v2 >> w;
         adj[v1].push_back(make_pair(w,v2));
         adj[v2].push_back(make_pair(w,v1));
@@ -60,7 +61,7 @@ int main(){
     bool included[v];
     //The corresponding vertex has already been included if true
 
-    for (i = 0; i < v; i ++){
+    for (int i = 0; i < v; i ++){
         mst[i] = -1;
         keys[i] = INF;
         //Set all key values to infinity
@@ -68,30 +69,27 @@ int main(){
         //None of the vertices have been included yet
     }
 
-    int selected = 0;
-
-    priority_queue< pair<int,int> , vector<pair<int,int> > , greater< pair<int,int> > > Q;
+    priority_queue<pair<int, int>, vector<pair<int, int> >, greater<pair<int, int> > > Q;
     //Priority queue as a minHeap
-    pair<int,int> p;
-    //This is used to traverse through the vertices
 
     mst[0] = 0;
     Q.push(make_pair(0,0));
     //To start MST with node 0, the root node
 
-    while(!Q.empty()){
+    while(!Q.empty()) {
+        pair<int, int> p = Q.top();
+        //This is used to traverse through the vertices
 
-        p = Q.top();
-        selected = p.second;
+        int selected = p.second;
         //Edge with minimum weight is selected
         Q.pop();
 
-        for(int i = 0;i < adj[selected].size(); i++ ){
+        for(int i = 0; i < adj[selected].size(); i++) {
             int next = adj[selected][i].second;
             //This variable stores index of the adjacent vertices to 'selected'
             int weight = adj[selected][i].first;
 
-            if (!included[next] && keys[next] > weight){
+            if (!included[next] && keys[next] > weight) {
                 keys[next] = weight;
                 Q.push(adj[selected][i]);
                 mst[next] = selected;
@@ -101,8 +99,8 @@ int main(){
 
     cout << "Minimum spanning tree has been generated." << endl;
 
-    for(i = 1; i < v; i++){
-        cout<< mst[i] <<" ";
+    for(int i = 1; i < v; i++) {
+        cout << mst[i] <<" ";
     }
     return 0;
 }

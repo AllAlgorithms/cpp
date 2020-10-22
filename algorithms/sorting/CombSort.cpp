@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int getNextGap(int gap)
@@ -12,19 +12,13 @@ int getNextGap(int gap)
 
 void combSort(int a[], int n)
 {
-
 	int gap = n;
-
 	bool swapped = true;
-
 
 	while (gap != 1 || swapped == true)
 	{
-
 		gap = getNextGap(gap);
-
 		swapped = false;
-
 
 		for (int i=0; i<n-gap; i++)
 		{
@@ -36,7 +30,6 @@ void combSort(int a[], int n)
 		}
 	}
 }
-
 
 int main()
 {

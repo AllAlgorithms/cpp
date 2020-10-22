@@ -1,9 +1,9 @@
 // C++ program to implement interpolation search 
-#include<bits/stdc++.h> 
+#include <iostream>
 using namespace std; 
 
 // If x is present in arr[0..n-1], then returns 
-// index of it, else returns -1. 
+// its index, else returns -1. 
 int interpolationSearch(int arr[], int n, int x) 
 { 
 	// Find indexes of two corners 
@@ -18,8 +18,8 @@ int interpolationSearch(int arr[], int n, int x)
 			if (arr[lo] == x) return lo; 
 			return -1; 
 		} 
-		// Probing the position with keeping 
-		// uniform distribution in mind. 
+		// Probing the position assuming
+		// uniform distribution. 
 		int pos = lo + (((double)(hi - lo) / 
 			(arr[hi] - arr[lo])) * (x - arr[lo])); 
 

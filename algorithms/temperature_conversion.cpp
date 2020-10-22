@@ -17,6 +17,5 @@ int main()
     cout << "Temperature in Reamur    = " << r << endl;
     cout << "Temperature in Kelvin    = " << k << endl;
 
-    system("pause");
     return 0;
 }

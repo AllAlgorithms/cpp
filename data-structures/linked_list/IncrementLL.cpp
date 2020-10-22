@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 /*
@@ -25,14 +25,14 @@ Idea is to reverse a LL, made some calculations and reverse it again to obtain t
 */
 
 class Node {
-	public:
-		int data;
-		Node *next;
-		
-		Node(int data) {
-			this->data = data;
-			this->next = NULL;
-		}
+public:
+	int data;
+	Node* next;
+	
+	Node(int data) {
+		this->data = data;
+		this->next = NULL;
+	}
 };
 
 Node* takeInput() {
@@ -85,13 +85,13 @@ void print(Node* head) {
 
 int main() {
 	Node* head = takeInput();
-	Node *newHead = NULL;
+	Node* newHead = NULL;
 	newHead = reverseLL(head);
 	
 	bool carry = false;
 	
-	Node *temp = newHead;
-	Node *prev = NULL;
+	Node* temp = newHead;
+	Node* prev = NULL;
 	int digit = temp->data + 1;
 	while(temp!= NULL) {
 		if(carry) {
