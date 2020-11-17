@@ -1,38 +1,32 @@
-#include <assert.h>
 #include <iostream>
+using namespace std;
 
+int checkPrimeNumber(int);
 
-bool checkIfPrimeNumber(unsigned int number);
-void test_checkPrimeNumber_();
+int main()
+{
+  int n;
 
-
-bool isPrimeNumber(unsigned int number) {
-
-  if (number == 1)
-    return false;
-
-  for (int divisor = 2; divisor < number; divisor++)
-    if (number % divisor == 0)
-      return false; 
-
-  return true;
-}
-
-void test_checkPrimeNumber_() {
-
-  assert(isPrimeNumber(2) == true);
-  assert(isPrimeNumber(3) == true);
-  assert(isPrimeNumber(13) == true);
-  assert(isPrimeNumber(59) == true);
-
-  assert(isPrimeNumber(96) == false);
-  assert(isPrimeNumber(124) == false);
-  assert(isPrimeNumber(1) == false);  
-}
-
-int main() {
-
-  test_checkPrimeNumber_();
-
+  cout << "Enter a positive  integer: ";
+  cin >> n;
+  
+  if(checkPrimeNumber(n) == 0)
+    cout << n << " is a prime number.";
+  else
+    cout << n << " is not a prime number.";
   return 0;
+}
+int checkPrimeNumber(int n)
+{
+  bool flag = false;
+
+  for(int i = 2; i <= n/2; ++i)
+  {
+      if(n%i == 0)
+      {
+          flag = true;
+          break;
+      }
+  }
+  return flag;
 }
