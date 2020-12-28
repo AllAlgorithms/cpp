@@ -103,7 +103,7 @@ int main()
 
     ifstream myfile(inputfile);
     //output file name for example myout.bin
-    cout << "please enter the file name yo want to output\n Example: output.bin" << endl;
+    cout << "please enter the file name you want to output\n Example: output.bin" << endl;
     string out;
     cin >> out;
     outfile.open(out, ios::binary | ios::out);
