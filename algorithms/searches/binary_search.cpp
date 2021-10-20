@@ -1,30 +1,19 @@
-//
-// Binary Search implemented in C++
-//
-// The All ▲lgorithms Project
-//
-// https://allalgorithms.com/searches/binary-search
-// https://github.com/allalgorithms/cpp
-// https://repl.it/@abranhe/Binary-Search
-//
-// Contributed by: Carlos Abraham Hernandez
-// Github: @abranhe
-//
 #include <iostream>
+
 using namespace std;
 
 int binary_search(int a[],int l,int r,int key)
 {
 	while(l<=r)
   {
-		int m = l + (r-l) / 2;
+		int mid = l + (r-l) / 2;
 
-		if(key == a[m])
-			return m;
-		else if(key < a[m])
-			r = m-1;
+		if(key == a[mid])
+			return mid;
+		else if(key < a[mid])
+			r = mid-1;
 		else
-			l = m+1;
+			l = mid+1;
 	}
 	return -1;
 }
@@ -47,8 +36,8 @@ int main(int argc, char const *argv[])
   int res = binary_search(a, 0, n-1, key);
 
   if(res != -1)
-		cout<< key << " found at index " << res << endl;
-	else
-		cout << key << " not found" << endl;
-	return 0;
+	cout<< key << " found at index " << res << endl;
+  else
+	cout << key << " not found" << endl;
+  return 0;
 }
