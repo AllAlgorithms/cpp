@@ -1,0 +1,3 @@
+no married 120
+//no single 70
+//yes divorced 220 [use one input at a time]
