@@ -1,5 +1,5 @@
 // represent linear equation in form of matrix
-#include<iostream.h>
+#include<iostream>
 #include<conio.h>
  
 using namespace std;
